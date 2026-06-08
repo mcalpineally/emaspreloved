@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emas Preloved Malaysia — Beli & Jual Emas Tulen Dipercayai</title>
+<meta name="description" content="Beli dan jual emas preloved 916 & 999 dengan harga telus, tiada upah, disahkan tulen. Proses mudah, bayaran selamat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9963A;--gold2:#E8C97A;--gold-pale:#FBF5E6;
+  --dark:#1A1208;--dark2:#2E1F05;--ink:#2C1F0A;--muted:#7A6545;
+  --border:#E8D9B8;--white:#FFFDF7;--r:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);font-size:15px;line-height:1.7;overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(255,253,247,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.nav-inner{max-width:940px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--dark);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{font-size:13px;font-weight:500;background:var(--gold);color:#fff;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:var(--dark2)}
+
+/* HERO */
+.hero{max-width:940px;margin:0 auto;padding:3.5rem 1.5rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);border:1px solid var(--border);border-radius:20px;padding:4px 12px;margin-bottom:1.25rem}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5vw,46px);font-weight:700;line-height:1.15;color:var(--dark);margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:1.75rem}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:#fff;border:none;border-radius:8px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
+.btn-primary:hover{background:var(--dark2)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--border);border-radius:8px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
+.btn-ghost:hover{background:var(--gold-pale)}
+
+/* LIVE PRICE CARD */
+.price-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem;box-shadow:0 4px 24px rgba(201,150,58,.10)}
+.price-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.price-card-title{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price-live-badge{font-size:10px;color:var(--gold);background:var(--gold-pale);padding:2px 8px;border-radius:20px;font-weight:500}
+.price-tabs{display:flex;gap:6px;margin-bottom:1rem}
+.price-tab{font-size:12px;padding:4px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;cursor:pointer;font-family:'Inter',sans-serif;color:var(--muted);transition:all .15s}
+.price-tab.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.price-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.price-box{background:var(--gold-pale);border-radius:8px;padding:10px 10px 8px}
+.price-box-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.price-box-val{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--dark);line-height:1}
+.price-box-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.chart-wrap{margin-top:1rem;height:80px;position:relative}
+.price-update{font-size:10px;color:var(--muted);margin-top:8px;text-align:right}
+
+/* SITUASI */
+.situasi{background:var(--dark);padding:3rem 1.5rem}
+.situasi-inner{max-width:940px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:.75rem}
+.situasi h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;margin-bottom:2rem;line-height:1.2;max-width:540px}
+.sit-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sit-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.25rem}
+.sit-icon{font-size:20px;margin-bottom:8px}
+.sit-card h3{font-size:13px;font-weight:500;color:#fff;margin-bottom:4px}
+.sit-card p{font-size:12px;color:rgba(255,255,255,.5);line-height:1.7}
+.solution-box{background:linear-gradient(135deg,var(--gold) 0%,#9a6910 100%);border-radius:var(--r);padding:1.25rem 1.75rem;text-align:center;margin-top:1.25rem}
+.solution-box h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:4px}
+.solution-box p{font-size:13px;color:rgba(255,255,255,.85)}
+
+/* KELEBIHAN */
+.kelebihan{max-width:940px;margin:0 auto;padding:3rem 1.5rem}
+.section-hdr{text-align:center;margin-bottom:2rem}
+.section-hdr h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,34px);font-weight:700;color:var(--dark);margin-bottom:6px}
+.section-hdr p{font-size:13px;color:var(--muted)}
+.kel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kel-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;transition:border-color .2s}
+.kel-card:hover{border-color:var(--gold)}
+.kel-icon{width:40px;height:40px;border-radius:50%;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:18px}
+.kel-card h3{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:4px}
+.kel-card p{font-size:12px;color:var(--muted);line-height:1.7}
+
+/* CARA BELI */
+.cara{background:var(--gold-pale);padding:3rem 1.5rem}
+.cara-inner{max-width:940px;margin:0 auto}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:1.5rem;position:relative}
+.step{text-align:center;position:relative}
+.step-num{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;margin:0 auto 8px}
+.step h4{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:3px}
+.step p{font-size:11px;color:var(--muted)}
+
+/* PRODUK */
+.produk{max-width:940px;margin:0 auto;padding:3rem 1.5rem}
+.produk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;margin-top:1.5rem}
+.produk-pill{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center;cursor:pointer;transition:all .2s;text-decoration:none;color:var(--ink)}
+.produk-pill:hover{border-color:var(--gold);background:var(--gold-pale)}
+.produk-pill span{font-size:20px;display:block;margin-bottom:4px}
+.produk-pill p{font-size:11px;font-weight:500;color:var(--muted)}
+
+/* CAWANGAN */
+.cawangan{background:var(--dark);padding:3rem 1.5rem}
+.cawangan-inner{max-width:940px;margin:0 auto}
+.branch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-top:1.5rem}
+.branch-pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 12px;font-size:12px;color:rgba(255,255,255,.7);line-height:1.4}
+.branch-pill strong{display:block;color:#fff;font-size:13px;margin-bottom:2px}
+
+/* TESTIMONI */
+.testi{max-width:940px;margin:0 auto;padding:3rem 1.5rem}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:1.5rem}
+.testi-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.25rem}
+.stars{color:var(--gold);font-size:12px;margin-bottom:8px}
+.testi-text{font-size:12px;color:var(--ink);line-height:1.8;font-style:italic;margin-bottom:10px}
+.testi-name{font-size:12px;font-weight:500;color:var(--muted)}
+
+/* AGEN */
+.agen{background:var(--gold-pale);padding:3rem 1.5rem}
+.agen-inner{max-width:940px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.agen-badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:#fff;border:1px solid var(--border);border-radius:20px;padding:4px 12px;margin-bottom:.75rem}
+.agen-inner h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--dark);margin-bottom:.75rem}
+.agen-inner p{font-size:13px;color:var(--muted);margin-bottom:1.25rem;line-height:1.8}
+.contact-box{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1rem}
+.contact-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}
+.contact-row:last-child{border-bottom:none}
+.contact-icon{font-size:16px;width:28px;text-align:center}
+.contact-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.contact-val{font-size:13px;font-weight:500;color:var(--dark)}
+.agen-photo{background:var(--dark);border-radius:16px;height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:1.5rem}
+.avatar-circle{width:72px;height:72px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#fff}
+.agen-name-big{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff}
+.agen-title-sm{font-size:11px;color:rgba(255,255,255,.45)}
+.agen-tagline{font-size:12px;color:rgba(255,255,255,.65);line-height:1.6;max-width:180px}
+
+/* FAQ */
+.faq{max-width:940px;margin:0 auto;padding:3rem 1.5rem}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;background:#fff;overflow:hidden}
+.faq-item.open{border-color:var(--gold)}
+.faq-btn{width:100%;background:none;border:none;text-align:left;padding:.9rem 1.1rem;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink)}
+.faq-btn:hover{background:var(--gold-pale)}
+.faq-chevron{flex-shrink:0;width:18px;height:18px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);transition:transform .25s,background .2s;margin-top:1px}
+.faq-item.open .faq-chevron{background:var(--gold);border-color:var(--gold);color:#fff;transform:rotate(45deg)}
+.faq-ans{display:none;padding:0 1.1rem .9rem 1.1rem;font-size:13px;color:var(--muted);line-height:1.85}
+.faq-item.open .faq-ans{display:block}
+.faq-ans strong{color:var(--ink)}
+
+/* CTA */
+.cta-strip{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);padding:3.5rem 1.5rem;text-align:center}
+.cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;margin-bottom:.75rem}
+.cta-strip p{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:2rem;max-width:460px;margin-left:auto;margin-right:auto;margin-bottom:2rem}
+.cta-big{background:var(--gold);color:#fff;border:none;border-radius:8px;padding:14px 32px;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
+.cta-big:hover{background:#a87520}
+
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding:1.75rem 1.5rem;text-align:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px}
+.footer-logo span{color:var(--gold2)}
+.footer-disc{font-size:11px;color:rgba(255,255,255,.28);max-width:460px;margin:0 auto .75rem;line-height:1.7}
+.footer-links{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
+.footer-links a{font-size:11px;color:rgba(255,255,255,.35);text-decoration:none}
+.footer-links a:hover{color:var(--gold2)}
+.divider{max-width:940px;margin:0 auto;height:1px;background:var(--border)}
+
+@media(max-width:700px){
+  .hero{grid-template-columns:1fr;padding:2rem 1.25rem 1.5rem}
+  .price-card{order:-1}
+  .sit-cards{grid-template-columns:1fr}
+  .kel-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .agen-inner{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .produk-grid{grid-template-columns:repeat(3,1fr)}
+  .branch-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Emas Preloved <span>◆</span></a>
+    <ul class="nav-links">
+      <li><a href="#harga">Harga</a></li>
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#cawangan">Cawangan</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="nav-cta" target="_blank">Daftar Sekarang →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge">✦ Platform Berlesen &amp; Dipercayai</div>
+    <h1>Emas Asli.<br><em>Harga Telus.</em><br>Tanpa Upah.</h1>
+    <p class="hero-desc">Beli dan jual emas preloved 916 &amp; 999.9 dengan harga pasaran semasa. Setiap gram disahkan tulen dengan mesin XRF. Proses mudah — online atau walk-in di 17 cawangan seluruh Malaysia.</p>
+    <div class="hero-btns">
+      <a href="https://www.emassrisemantan.com/ref/alpianali" class="btn-primary" target="_blank">Daftar &amp; Lihat Stok →</a>
+      <a href="#faq" class="btn-ghost">Soalan Lazim</a>
+    </div>
+  </div>
+  <div id="harga">
+    <div class="price-card">
+      <div class="price-card-header">
+        <span class="price-card-title">Harga Emas Semasa</span>
+        <span class="price-live-badge">● Langsung</span>
+      </div>
+      <div class="price-tabs">
+        <button class="price-tab active" onclick="switchTab('916',this)">916 (22K)</button>
+        <button class="price-tab" onclick="switchTab('999',this)">999.9 (24K)</button>
+      </div>
+      <div class="price-grid" id="priceGrid916">
+        <div class="price-box"><div class="price-box-label">Beli</div><div class="price-box-val">RM 564</div><div class="price-box-sub">per gram</div></div>
+        <div class="price-box"><div class="price-box-label">Preloved</div><div class="price-box-val">RM 544</div><div class="price-box-sub">tiada upah</div></div>
+        <div class="price-box"><div class="price-box-label">Buyback</div><div class="price-box-val">RM 509</div><div class="price-box-sub">jual balik</div></div>
+      </div>
+      <div class="price-grid" id="priceGrid999" style="display:none">
+        <div class="price-box"><div class="price-box-label">Beli</div><div class="price-box-val">RM 660</div><div class="price-box-sub">per gram</div></div>
+        <div class="price-box"><div class="price-box-label">Preloved</div><div class="price-box-val">RM 658</div><div class="price-box-sub">tiada upah</div></div>
+        <div class="price-box"><div class="price-box-label">Buyback</div><div class="price-box-val">RM 553</div><div class="price-box-sub">jual balik</div></div>
+      </div>
+      <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
+      <div class="price-update">Dikemaskini: 8 Jun 2026 · Sumber: FGJAM</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="situasi">
+  <div class="situasi-inner">
+    <div class="eyebrow">Kenapa ramai pilih platform ini</div>
+    <h2>Nak beli emas preloved tapi risau kena tipu?</h2>
+    <div class="sit-cards">
+      <div class="sit-card"><div class="sit-icon">🔍</div><h3>Situasi</h3><p>Nak beli emas preloved tapi tak tahu kedai mana selamat. Live TikTok banyak — tapi mana satu boleh dipercayai?</p></div>
+      <div class="sit-card"><div class="sit-icon">😟</div><h3>Masalah</h3><p>Takut emas tak tulen. Takut kena timbang kurang. Takut bayar tapi barang tak sampai atau harga tak telus.</p></div>
+      <div class="sit-card"><div class="sit-icon">✅</div><h3>Penyelesaian</h3><p>Platform berlesen SSM, ujian XRF sebelum jual, harga ikut FGJAM, resit rasmi untuk setiap transaksi.</p></div>
+    </div>
+    <div style="text-align:center;font-size:22px;color:var(--gold2);margin:1.25rem 0">↓</div>
+    <div class="solution-box">
+      <h3>Mulakan dengan serendah 1 gram. Tanpa komitmen besar.</h3>
+      <p>Emas preloved 916 — sama ketulenan dengan emas baru, harga jauh lebih rendah kerana tiada upah pembuatan.</p>
+    </div>
+  </div>
+</section>
+
+<section class="kelebihan">
+  <div class="section-hdr">
+    <div class="eyebrow" style="color:var(--gold)">Kelebihan</div>
+    <h2>Lebih dari sekadar kedai emas.</h2>
+    <p>Kami bina kepercayaan satu transaksi pada satu masa.</p>
+  </div>
+  <div class="kel-grid">
+    <div class="kel-card"><div class="kel-icon">🔬</div><h3>Ujian XRF Sebelum Jual</h3><p>Setiap emas yang kami terima diuji ketulenannya — tanpa gosok batu, tanpa asid yang boleh rosak barang.</p></div>
+    <div class="kel-card"><div class="kel-icon">💰</div><h3>Tiada Upah Pembuatan</h3><p>Emas preloved bermakna Puan bayar nilai gram semata-mata. Jimat RM15–RM50 per gram berbanding emas baru.</p></div>
+    <div class="kel-card"><div class="kel-icon">📄</div><h3>Resit Rasmi Setiap Transaksi</h3><p>Tiada urus niaga tanpa dokumentasi. Setiap pembelian dan penjualan ada rekod bertulis yang boleh disemak.</p></div>
+    <div class="kel-card"><div class="kel-icon">🏪</div><h3>17 Cawangan + Online</h3><p>Walk-in ke mana-mana cawangan seluruh Malaysia atau urus sepenuhnya secara online dengan penghantaran pos berdaftar.</p></div>
+    <div class="kel-card"><div class="kel-icon">📊</div><h3>Harga Ikut FGJAM</h3><p>Harga dikemaskini setiap hari mengikut indeks rasmi FGJAM. Telus, tiada markup tersembunyi.</p></div>
+    <div class="kel-card"><div class="kel-icon">🤝</div><h3>Buyback Mudah</h3><p>Nak jual semula? Kami beli. Bayaran tunai atau transfer pada hari yang sama. Tiada birokrasi.</p></div>
+  </div>
+</section>
+
+<section class="cara">
+  <div class="cara-inner">
+    <div class="eyebrow" style="color:var(--gold)">Proses Mudah</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:var(--dark);margin-bottom:.4rem">Cara Beli Emas Preloved</h2>
+    <p style="font-size:12px;color:var(--muted)">4 langkah sahaja. Selesai dalam masa beberapa minit.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h4>Daftar Akaun</h4><p>Klik pautan daftar, isi maklumat asas. Percuma.</p></div>
+      <div class="step"><div class="step-num">2</div><h4>Semak Stok</h4><p>Layari katalog untuk lihat stok preloved terkini.</p></div>
+      <div class="step"><div class="step-num">3</div><h4>Buat Bayaran</h4><p>Transfer online atau FPX. Disahkan serta-merta.</p></div>
+      <div class="step"><div class="step-num">4</div><h4>Terima Emas</h4><p>Walk-in ambil sendiri atau pos berdaftar ke alamat Puan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="produk" id="produk">
+  <div class="section-hdr">
+    <div class="eyebrow" style="color:var(--gold)">Kategori Stok</div>
+    <h2>Apa yang ada dalam platform?</h2>
+    <p>Stok dikemaskini setiap hari. Daftar untuk semak ketersediaan terkini.</p>
+  </div>
+  <div class="produk-grid">
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="produk-pill" target="_blank"><span>🔗</span><p>Rantai</p></a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="produk-pill" target="_blank"><span>💍</span><p>Cincin</p></a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="produk-pill" target="_blank"><span>📿</span><p>Gelang</p></a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="produk-pill" target="_blank"><span>👂</span><p>Subang</p></a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="produk-pill" target="_blank"><span>✨</span><p>Loket</p></a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="produk-pill" target="_blank"><span>💛</span><p>Set Pengantin</p></a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="produk-pill" target="_blank"><span>🎁</span><p>Dulang Hantaran</p></a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="produk-pill" target="_blank"><span>🪙</span><p>Gold Bar</p></a>
+  </div>
+</section>
+
+<section class="cawangan" id="cawangan">
+  <div class="cawangan-inner">
+    <div class="eyebrow">Rangkaian Cawangan</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:#fff;margin-bottom:.4rem">17 Cawangan Seluruh Malaysia</h2>
+    <p style="font-size:12px;color:rgba(255,255,255,.45);margin-bottom:0">Walk-in atau urus online. Semua cawangan menerima transaksi emas preloved.</p>
+    <div class="branch-grid">
+      <div class="branch-pill"><strong>Batu Pahat</strong>Johor</div>
+      <div class="branch-pill"><strong>Bertam</strong>Pulau Pinang</div>
+      <div class="branch-pill"><strong>Dungun</strong>Terengganu</div>
+      <div class="branch-pill"><strong>Gua Musang</strong>Kelantan</div>
+      <div class="branch-pill"><strong>Ipoh</strong>Perak</div>
+      <div class="branch-pill"><strong>Jengka</strong>Pahang</div>
+      <div class="branch-pill"><strong>Kajang</strong>Selangor</div>
+      <div class="branch-pill"><strong>Kota Bharu</strong>Kelantan</div>
+      <div class="branch-pill"><strong>Kota Kinabalu</strong>Sabah</div>
+      <div class="branch-pill"><strong>Kuala Terengganu</strong>Terengganu</div>
+      <div class="branch-pill"><strong>Kuantan</strong>Pahang</div>
+      <div class="branch-pill"><strong>Sandakan</strong>Sabah</div>
+      <div class="branch-pill"><strong>Shah Alam</strong>Selangor</div>
+      <div class="branch-pill"><strong>Sungai Petani</strong>Kedah</div>
+      <div class="branch-pill"><strong>Tawau</strong>Sabah</div>
+      <div class="branch-pill"><strong>Temerloh</strong>Pahang</div>
+      <div class="branch-pill"><strong>Puncak Alam</strong>Selangor</div>
+    </div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="section-hdr">
+    <div class="eyebrow" style="color:var(--gold)">Kata Pelanggan</div>
+    <h2>Mereka sudah beli.</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="stars">★★★★★</div><div class="testi-text">"Pertama kali beli emas preloved, memang rasa nervous. Tapi proses sangat mudah. Emas sampai dengan resit, berat betul, tulen. Akan beli lagi!"</div><div class="testi-name">Puan Hazirah M. — Alor Setar</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><div class="testi-text">"Dah beli beberapa kali. Yang paling saya suka — harga telus, ada ujian ketulenan, dan resit untuk setiap beli. Sangat professional."</div><div class="testi-name">Encik Farhan A. — Sungai Petani</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><div class="testi-text">"Saya cari emas untuk simpan nama anak. Dicadangkan gelang kendi preloved 916 yang berbaloi — jimat upah dan sama nilainya masa jual balik."</div><div class="testi-name">Puan Suraya K. — Jitra</div></div>
+  </div>
+</section>
+
+<section class="agen">
+  <div class="agen-inner">
+    <div>
+      <div class="agen-badge">Penasihat Emas Anda</div>
+      <h2>Biar kami pandukan Puan dari mula.</h2>
+      <p>Daftar melalui pautan di bawah dan akses stok emas preloved tulen yang dikemaskini setiap hari. Proses mudah, selamat, dan telus.</p>
+      <a href="https://www.emassrisemantan.com/ref/alpianali" class="btn-primary" target="_blank" style="margin-bottom:1.25rem;display:inline-block">Daftar Sekarang — Percuma →</a>
+      <div class="contact-box">
+        <div class="contact-row"><div class="contact-icon">🕐</div><div><div class="contact-lbl">Waktu Layanan</div><div class="contact-val">9 pagi – 6 petang (Isnin–Sabtu)</div></div></div>
+        <div class="contact-row"><div class="contact-icon">📍</div><div><div class="contact-lbl">Lokasi</div><div class="contact-val">17 cawangan seluruh Malaysia</div></div></div>
+        <div class="contact-row"><div class="contact-icon">📦</div><div><div class="contact-lbl">Penghantaran</div><div class="contact-val">Pos berdaftar ke seluruh Malaysia</div></div></div>
+      </div>
+    </div>
+    <div class="agen-photo">
+      <div class="avatar-circle">AA</div>
+      <div class="agen-name-big">Alpian Ali</div>
+      <div class="agen-title-sm">Ejen Emas Berlesen</div>
+      <div class="agen-tagline">"Setiap gram emas yang Puan beli adalah satu langkah ke hadapan untuk keluarga."</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="section-hdr">
+    <div class="eyebrow" style="color:var(--gold)">Soalan Lazim</div>
+    <h2>Jawapan untuk Puan.</h2>
+    <p>Soalan paling kerap ditanya oleh pembeli emas preloved buat pertama kali.</p>
+  </div>
+  <div id="faqlist"></div>
+</section>
+
+<section class="cta-strip">
+  <h2>Sedia untuk mulakan simpanan emas?<br><em style="font-style:italic;color:var(--gold2)">Daftar percuma sekarang.</em></h2>
+  <p>Proses pendaftaran mudah dan pantas. Setelah berdaftar, Puan boleh terus semak stok, bandingkan harga, dan beli emas preloved tulen dengan selamat.</p>
+  <a href="https://www.emassrisemantan.com/ref/alpianali" class="cta-big" target="_blank">Daftar Percuma Sekarang →</a>
+</section>
+
+<footer>
+  <div class="footer-logo">Emas Preloved Malaysia <span>◆</span></div>
+  <p class="footer-disc">Laman ini diuruskan oleh ejen sah bagi tujuan promosi dan maklumat. Harga emas yang dipaparkan adalah berdasarkan indeks FGJAM dan boleh berubah setiap hari. Sila semak platform untuk harga terkini sebelum membuat keputusan.</p>
+  <div class="footer-links">
+    <a href="#harga">Harga</a>
+    <a href="#produk">Produk</a>
+    <a href="#cawangan">Cawangan</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" target="_blank">Daftar Sekarang</a>
+  </div>
+</footer>
+
+<script>
+// Real price history from platform JSON (last 18 data points)
+const history916 = [575,580,578,578,570,570,570,570,570,570,578,575,573,563,563,563,564,564];
+const history999 = [673,676,667,675,670,670,670,673,671,671,674,671,665,666,668,670,660,660];
+const labels = ['18 May','19 May','20 May','21 May','22 May','23 May','24 May','25 May','26 May','28 May','30 May','1 Jun','2 Jun','3 Jun','4 Jun','5 Jun','6 Jun','8 Jun'];
+
+let activeChart = '916';
+const ctx = document.getElementById('priceChart').getContext('2d');
+const chart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels,
+    datasets: [{
+      data: history916,
+      borderColor: '#C9963A',
+      borderWidth: 1.5,
+      pointRadius: 0,
+      tension: 0.4,
+      fill: true,
+      backgroundColor: 'rgba(201,150,58,0.08)'
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: {
+      callbacks: { label: ctx => 'RM ' + ctx.parsed.y + '/g' }
+    }},
+    scales: {
+      x: { display: false },
+      y: {
+        display: true,
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { font: { size: 9 }, color: '#7A6545', callback: v => 'RM' + v }
+      }
+    }
+  }
+});
+
+function switchTab(type, btn) {
+  document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('priceGrid916').style.display = type === '916' ? 'grid' : 'none';
+  document.getElementById('priceGrid999').style.display = type === '999' ? 'grid' : 'none';
+  chart.data.datasets[0].data = type === '916' ? history916 : history999;
+  chart.update();
+}
+
+// FAQ
+const faqs = [
+  { q: "Harga emas dah turun lebih RM200 dari peak — ini masa terbaik ke beli preloved?", a: "<strong>Ya — ini masa paling bijak untuk mula.</strong> Harga emas 916 pernah cecah lebih RM575/gram awal tahun ini. Kini stabil di sekitar RM544/gram (preloved). Masa harga rendah seperti ini, pembeli preloved dapat lebih nilai kerana tiada upah — bermakna setiap ringgit yang Puan belanjakan masuk terus ke dalam nilai gram emas." },
+  { q: "Ramai tunggu harga emas naik semula baru nak beli — kenapa strategi tu salah?", a: "Strategi 'tunggu naik baru beli' membuatkan ramai akhirnya beli di harga puncak. Pendekatan yang lebih bijak: beli secara berkala tanpa ikut emosi pasaran (dollar cost averaging). Dalam tempoh 5–10 tahun, purata harga beli Puan akan jauh lebih rendah dari harga pasaran semasa." },
+  { q: "Kenapa beli emas preloved di platform berlesen lebih jimat berbanding kedai biasa?", a: "Tiga sebab: <strong>(1)</strong> Tiada upah pembuatan — jimat RM15–RM50 per gram. <strong>(2)</strong> Harga telus mengikut FGJAM — tiada markup tersembunyi. <strong>(3)</strong> Ujian XRF sebelum jual — Puan bayar untuk emas tulen sahaja." },
+  { q: "Emas preloved 916 — sama ke dengan emas baru? Berapa boleh jimat?", a: "<strong>100% sama emas.</strong> 916 bermaksud 91.6% emas tulen — sama ada baru atau preloved, kandungan logam identik. Perbezaannya hanya pada rekaan dan upah. Contoh: gelang 5 gram — emas baru ~RM2,935 (termasuk upah RM25/g), preloved ~RM2,720. Jimat lebih RM200 untuk 5 gram sahaja." },
+  { q: "Emas preloved vs emas baru — mana lebih untung untuk simpan aset jangka panjang?", a: "Untuk tujuan simpanan, emas preloved menang. Kedai beli balik (buyback) tidak bezakan antara baru atau preloved — harga ditentukan oleh berat dan ketulenan. Bermakna pembeli preloved ada margin untung lebih besar dari hari pertama beli kerana tidak perlu 'cover' kos upah." },
+  { q: "Kenapa ramai ibu-ibu pilih emas preloved untuk simpan nama anak?", a: "Sebab emas tidak susut nilai seperti wang tunai. Ibu-ibu pilih preloved khususnya kerana: boleh mula dengan bajet kecil, mudah disimpan, boleh dijual bila perlu, dan anak perempuan boleh pakai bila besar. Nilai sentimental dan nilai aset dalam satu." },
+  { q: "Apa 5 tanda kedai emas online yang perlu dielak?", a: "<strong>1.</strong> Tiada alamat fizikal yang boleh disahkan. <strong>2.</strong> Harga terlalu jauh bawah harga FGJAM. <strong>3.</strong> Tiada bukti ujian ketulenan (XRF). <strong>4.</strong> Bayaran hanya ke akaun peribadi tanpa nama syarikat. <strong>5.</strong> Tiada nombor SSM atau lesen perniagaan yang boleh disemak." },
+  { q: "Kenapa beli dari platform berlesen lebih selamat berbanding beli dalam live TikTok rawak?", a: "Live TikTok rawak tiada perjanjian bertulis, tiada ujian profesional, dan seller boleh hilang tanpa notis. Platform berlesen pula: berdaftar SSM, ujian XRF untuk setiap item, resit rasmi untuk setiap transaksi, dan ada alamat tetap yang boleh dikunjungi." },
+  { q: "Emas preloved vs crypto — mana lebih selamat untuk simpan lebihan wang?", a: "Emas ada nilai fizikal, tidak boleh di-hack, dan telah terbukti selama ribuan tahun. Crypto potensi pulangan tinggi tapi volatiliti ekstrem. Cadangan praktikal: simpan 70–80% dalam emas untuk kestabilan, pertimbangkan crypto hanya jika Puan sudah faham risikonya sepenuhnya." },
+  { q: "Kira zakat emas saya — nisab berapa gram dan berapa RM pada 2026?", a: "Nisab zakat emas = 85 gram emas tulen (999). Pada harga semasa ~RM660/gram (999), nisab bersamaan lebih kurang <strong>RM56,100</strong>. Kadar zakat: 2.5% daripada nilai emas yang dimiliki setelah cukup haul (1 tahun hijri). Semak dengan pejabat zakat negeri untuk pengesahan terkini." },
+  { q: "Kijang Emas vs barang kemas preloved 916 — mana lagi berbaloi untuk pelabur kecil?", a: "<strong>Mulakan dengan preloved 916.</strong> Kijang Emas bagus untuk diversifikasi lanjut tapi ada premium tinggi dan minimum pelaburan lebih besar. Preloved 916: boleh mula dari 1–2 gram, tiada upah, harga lebih dekat dengan spot. Bila portfolio sudah 50 gram ke atas, baru pertimbangkan Kijang Emas." }
+];
+
+const list = document.getElementById('faqlist');
+faqs.forEach((f,i) => {
+  const div = document.createElement('div');
+  div.className = 'faq-item';
+  div.innerHTML = `<button class="faq-btn" onclick="tf(${i})"><span>${f.q}</span><span class="faq-chevron">+</span></button><div class="faq-ans">${f.a}</div>`;
+  list.appendChild(div);
+});
+function tf(i){
+  const items = document.querySelectorAll('.faq-item');
+  const o = items[i].classList.contains('open');
+  items.forEach(el=>el.classList.remove('open'));
+  if(!o) items[i].classList.add('open');
+}
+</script>
+</body>
+</html>
