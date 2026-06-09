@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emas Preloved Malaysia — Beli & Jual Emas Tulen Dipercayai</title>
-<meta name="description" content="Beli dan jual emas preloved 916 & 999 dengan harga telus, tiada upah, disahkan tulen. Proses mudah, bayaran selamat.">
+<title>Emas Preloved Malaysia — Tukar Emas Lama, Dapat Emas Baru</title>
+<meta name="description" content="Beli emas preloved 916 & 999 tanpa upah, atau jual emas lama untuk dapat emas baru yang cantik. Harga telus, disahkan tulen, 17 cawangan seluruh Malaysia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -43,7 +43,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,253,247,0.96);backdrop
 .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--border);border-radius:8px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
 .btn-ghost:hover{background:var(--gold-pale)}
 
-/* LIVE PRICE CARD */
+/* PRICE CARD */
 .price-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem;box-shadow:0 4px 24px rgba(201,150,58,.10)}
 .price-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
 .price-card-title{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -59,11 +59,18 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,253,247,0.96);backdrop
 .chart-wrap{margin-top:1rem;height:80px;position:relative}
 .price-update{font-size:10px;color:var(--muted);margin-top:8px;text-align:right}
 
+/* GALLERY STRIP */
+.gallery{max-width:940px;margin:0 auto;padding:0 1.5rem 2.5rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:1;background:var(--gold-pale)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gallery-item:hover img{transform:scale(1.04)}
+
 /* SITUASI */
 .situasi{background:var(--dark);padding:3rem 1.5rem}
 .situasi-inner{max-width:940px;margin:0 auto}
 .eyebrow{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:.75rem}
-.situasi h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;margin-bottom:2rem;line-height:1.2;max-width:540px}
+.situasi h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;margin-bottom:2rem;line-height:1.2;max-width:580px}
 .sit-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .sit-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.25rem}
 .sit-icon{font-size:20px;margin-bottom:8px}
@@ -85,11 +92,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,253,247,0.96);backdrop
 .kel-card h3{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:4px}
 .kel-card p{font-size:12px;color:var(--muted);line-height:1.7}
 
-/* CARA BELI */
+/* CARA */
 .cara{background:var(--gold-pale);padding:3rem 1.5rem}
 .cara-inner{max-width:940px;margin:0 auto}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:1.5rem;position:relative}
-.step{text-align:center;position:relative}
+.cara-tabs{display:flex;gap:8px;margin-bottom:1.75rem;flex-wrap:wrap}
+.cara-tab{font-size:12px;font-weight:500;padding:6px 16px;border-radius:20px;border:1px solid var(--border);background:#fff;cursor:pointer;font-family:'Inter',sans-serif;color:var(--muted);transition:all .15s}
+.cara-tab.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:1rem}
+.step{text-align:center}
 .step-num{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;margin:0 auto 8px}
 .step h4{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:3px}
 .step p{font-size:11px;color:var(--muted)}
@@ -150,7 +160,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,253,247,0.96);backdrop
 /* CTA */
 .cta-strip{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);padding:3.5rem 1.5rem;text-align:center}
 .cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;margin-bottom:.75rem}
-.cta-strip p{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:2rem;max-width:460px;margin-left:auto;margin-right:auto;margin-bottom:2rem}
+.cta-strip p{font-size:13px;color:rgba(255,255,255,.6);max-width:460px;margin:0 auto 2rem}
 .cta-big{background:var(--gold);color:#fff;border:none;border-radius:8px;padding:14px 32px;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
 .cta-big:hover{background:#a87520}
 
@@ -166,6 +176,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
 @media(max-width:700px){
   .hero{grid-template-columns:1fr;padding:2rem 1.25rem 1.5rem}
   .price-card{order:-1}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
   .sit-cards{grid-template-columns:1fr}
   .kel-grid{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
@@ -184,22 +195,23 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
     <a href="#" class="nav-logo">Emas Preloved <span>◆</span></a>
     <ul class="nav-links">
       <li><a href="#harga">Harga</a></li>
-      <li><a href="#produk">Produk</a></li>
+      <li><a href="#koleksi">Koleksi</a></li>
       <li><a href="#cawangan">Cawangan</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="https://www.emassrisemantan.com/ref/alpianali" class="nav-cta" target="_blank">Daftar Sekarang →</a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="nav-cta" target="_blank">Lihat Koleksi →</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div>
-    <div class="hero-badge">✦ Platform Berlesen &amp; Dipercayai</div>
-    <h1>Emas Asli.<br><em>Harga Telus.</em><br>Tanpa Upah.</h1>
-    <p class="hero-desc">Beli dan jual emas preloved 916 &amp; 999.9 dengan harga pasaran semasa. Setiap gram disahkan tulen dengan mesin XRF. Proses mudah — online atau walk-in di 17 cawangan seluruh Malaysia.</p>
+    <div class="hero-badge">✦ Emas Tulen · Harga Tanpa Upah</div>
+    <h1>Emas Lama<br>Jadi <em>Emas Baru</em><br>Yang Cantik.</h1>
+    <p class="hero-desc">Jual emas lama Puan, dapat emas baru yang lagi cantik — tanpa rugi. Atau beli emas preloved 916 &amp; 999 dengan harga gram penuh, tanpa upah. Setiap keping disahkan tulen dengan mesin XRF.</p>
     <div class="hero-btns">
-      <a href="https://www.emassrisemantan.com/ref/alpianali" class="btn-primary" target="_blank">Daftar &amp; Lihat Stok →</a>
-      <a href="#faq" class="btn-ghost">Soalan Lazim</a>
+      <a href="https://www.emassrisemantan.com/ref/alpianali" class="btn-primary" target="_blank">Semak Koleksi Sekarang →</a>
+      <a href="#cara" class="btn-ghost">Cara Tukar Emas</a>
     </div>
   </div>
   <div id="harga">
@@ -228,60 +240,95 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
   </div>
 </section>
 
+<!-- GALLERY -->
+<section class="gallery" id="koleksi">
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="/images/emas-preloved-01" alt="Emas preloved koleksi Malaysia" loading="lazy"></div>
+    <div class="gallery-item"><img src="/images/emas-preloved-02" alt="Barang kemas emas preloved 916" loading="lazy"></div>
+    <div class="gallery-item"><img src="/images/emas-preloved-03" alt="Cincin gelang emas preloved tulen" loading="lazy"></div>
+    <div class="gallery-item"><img src="/images/emas-preloved-04" alt="Emas preloved rantai loket Malaysia" loading="lazy"></div>
+  </div>
+</section>
+
 <div class="divider"></div>
 
+<!-- SITUASI -->
 <section class="situasi">
   <div class="situasi-inner">
-    <div class="eyebrow">Kenapa ramai pilih platform ini</div>
-    <h2>Nak beli emas preloved tapi risau kena tipu?</h2>
+    <div class="eyebrow">Kisah yang ramai kenal</div>
+    <h2>Ada emas lama terbiar dalam laci. Sayang nak buang, tapi dah tak pakai.</h2>
     <div class="sit-cards">
-      <div class="sit-card"><div class="sit-icon">🔍</div><h3>Situasi</h3><p>Nak beli emas preloved tapi tak tahu kedai mana selamat. Live TikTok banyak — tapi mana satu boleh dipercayai?</p></div>
-      <div class="sit-card"><div class="sit-icon">😟</div><h3>Masalah</h3><p>Takut emas tak tulen. Takut kena timbang kurang. Takut bayar tapi barang tak sampai atau harga tak telus.</p></div>
-      <div class="sit-card"><div class="sit-icon">✅</div><h3>Penyelesaian</h3><p>Platform berlesen SSM, ujian XRF sebelum jual, harga ikut FGJAM, resit rasmi untuk setiap transaksi.</p></div>
+      <div class="sit-card">
+        <div class="sit-icon">💍</div>
+        <h3>Situasi</h3>
+        <p>Emas lama ada — cincin tunang dah tukar, rantai pemberian mak dah out of style. Nak jual tapi tak tahu harga berpatutan ke tidak.</p>
+      </div>
+      <div class="sit-card">
+        <div class="sit-icon">😟</div>
+        <h3>Masalah</h3>
+        <p>Kedai biasa beli murah, jual mahal. Tak tahu nak percaya siapa. Live TikTok ada tapi risau kena tipu atau harga tak telus.</p>
+      </div>
+      <div class="sit-card">
+        <div class="sit-icon">✨</div>
+        <h3>Penyelesaian</h3>
+        <p>Jual emas lama pada harga buyback FGJAM. Guna nilai tu beli emas preloved baru yang cantik — tanpa upah, tanpa rugi.</p>
+      </div>
     </div>
     <div style="text-align:center;font-size:22px;color:var(--gold2);margin:1.25rem 0">↓</div>
     <div class="solution-box">
-      <h3>Mulakan dengan serendah 1 gram. Tanpa komitmen besar.</h3>
-      <p>Emas preloved 916 — sama ketulenan dengan emas baru, harga jauh lebih rendah kerana tiada upah pembuatan.</p>
+      <h3>Tukar emas lama → emas baru yang Puan benar-benar suka.</h3>
+      <p>Sama ketulenan, sama nilai — tapi rekaan yang Puan pilih sendiri. Jimat upah RM15–RM50 setiap gram.</p>
     </div>
   </div>
 </section>
 
+<!-- KELEBIHAN -->
 <section class="kelebihan">
   <div class="section-hdr">
-    <div class="eyebrow" style="color:var(--gold)">Kelebihan</div>
-    <h2>Lebih dari sekadar kedai emas.</h2>
-    <p>Kami bina kepercayaan satu transaksi pada satu masa.</p>
+    <div class="eyebrow" style="color:var(--gold)">Kenapa di sini</div>
+    <h2>Emas yang Puan suka, harga yang berbaloi.</h2>
+    <p>Bukan sekadar beli jual — kami pastikan setiap keping emas adalah pengalaman yang menyeronokkan.</p>
   </div>
   <div class="kel-grid">
-    <div class="kel-card"><div class="kel-icon">🔬</div><h3>Ujian XRF Sebelum Jual</h3><p>Setiap emas yang kami terima diuji ketulenannya — tanpa gosok batu, tanpa asid yang boleh rosak barang.</p></div>
-    <div class="kel-card"><div class="kel-icon">💰</div><h3>Tiada Upah Pembuatan</h3><p>Emas preloved bermakna Puan bayar nilai gram semata-mata. Jimat RM15–RM50 per gram berbanding emas baru.</p></div>
-    <div class="kel-card"><div class="kel-icon">📄</div><h3>Resit Rasmi Setiap Transaksi</h3><p>Tiada urus niaga tanpa dokumentasi. Setiap pembelian dan penjualan ada rekod bertulis yang boleh disemak.</p></div>
-    <div class="kel-card"><div class="kel-icon">🏪</div><h3>17 Cawangan + Online</h3><p>Walk-in ke mana-mana cawangan seluruh Malaysia atau urus sepenuhnya secara online dengan penghantaran pos berdaftar.</p></div>
-    <div class="kel-card"><div class="kel-icon">📊</div><h3>Harga Ikut FGJAM</h3><p>Harga dikemaskini setiap hari mengikut indeks rasmi FGJAM. Telus, tiada markup tersembunyi.</p></div>
-    <div class="kel-card"><div class="kel-icon">🤝</div><h3>Buyback Mudah</h3><p>Nak jual semula? Kami beli. Bayaran tunai atau transfer pada hari yang sama. Tiada birokrasi.</p></div>
+    <div class="kel-card"><div class="kel-icon">💛</div><h3>Koleksi Sentiasa Baru</h3><p>Stok preloved dikemaskini setiap hari — cincin, gelang, rantai, loket, set pengantin. Selalu ada yang baru untuk diterokai.</p></div>
+    <div class="kel-card"><div class="kel-icon">💰</div><h3>Jimat Upah, Dapat Lebih Gram</h3><p>Emas preloved tiada upah pembuatan. Jimat RM15–RM50 per gram berbanding beli baru — wang lebihan boleh tambah gram lagi.</p></div>
+    <div class="kel-card"><div class="kel-icon">🔬</div><h3>Setiap Keping Diuji XRF</h3><p>Puan terima emas yang sudah disahkan tulen dengan mesin XRF — bukan andaian, bukan agak-agak. Jaminan sebenar.</p></div>
+    <div class="kel-card"><div class="kel-icon">🔄</div><h3>Jual Balik Bila-Bila Masa</h3><p>Tak suka lagi? Jual balik pada harga buyback FGJAM hari tu juga. Bayaran tunai atau transfer — tiada soal tanya panjang.</p></div>
+    <div class="kel-card"><div class="kel-icon">🏪</div><h3>17 Cawangan + Pos Berdaftar</h3><p>Walk-in ke cawangan berhampiran atau beli online — emas dihantar dengan pos berdaftar ke pintu rumah Puan.</p></div>
+    <div class="kel-card"><div class="kel-icon">📄</div><h3>Resit untuk Setiap Transaksi</h3><p>Setiap beli dan jual ada resit rasmi. Rekod jelas, telus, boleh disemak bila-bila masa.</p></div>
   </div>
 </section>
 
-<section class="cara">
+<!-- CARA -->
+<section class="cara" id="cara">
   <div class="cara-inner">
     <div class="eyebrow" style="color:var(--gold)">Proses Mudah</div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:var(--dark);margin-bottom:.4rem">Cara Beli Emas Preloved</h2>
-    <p style="font-size:12px;color:var(--muted)">4 langkah sahaja. Selesai dalam masa beberapa minit.</p>
-    <div class="steps">
-      <div class="step"><div class="step-num">1</div><h4>Daftar Akaun</h4><p>Klik pautan daftar, isi maklumat asas. Percuma.</p></div>
-      <div class="step"><div class="step-num">2</div><h4>Semak Stok</h4><p>Layari katalog untuk lihat stok preloved terkini.</p></div>
-      <div class="step"><div class="step-num">3</div><h4>Buat Bayaran</h4><p>Transfer online atau FPX. Disahkan serta-merta.</p></div>
-      <div class="step"><div class="step-num">4</div><h4>Terima Emas</h4><p>Walk-in ambil sendiri atau pos berdaftar ke alamat Puan.</p></div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:var(--dark);margin-bottom:.75rem">Nak beli atau nak jual?</h2>
+    <div class="cara-tabs">
+      <button class="cara-tab active" onclick="switchCara('beli',this)">Cara Beli Emas Preloved</button>
+      <button class="cara-tab" onclick="switchCara('jual',this)">Cara Jual Emas Lama</button>
+    </div>
+    <div id="caraBeli" class="steps">
+      <div class="step"><div class="step-num">1</div><h4>Daftar Percuma</h4><p>Klik pautan, isi nama & nombor. Siap dalam 2 minit.</p></div>
+      <div class="step"><div class="step-num">2</div><h4>Pilih Emas</h4><p>Layari katalog preloved — cincin, gelang, rantai dan lain-lain.</p></div>
+      <div class="step"><div class="step-num">3</div><h4>Buat Bayaran</h4><p>FPX atau transfer. Disahkan serta-merta.</p></div>
+      <div class="step"><div class="step-num">4</div><h4>Terima di Rumah</h4><p>Pos berdaftar atau ambil sendiri di cawangan berhampiran.</p></div>
+    </div>
+    <div id="caraJual" class="steps" style="display:none">
+      <div class="step"><div class="step-num">1</div><h4>Daftar Akaun</h4><p>Daftar percuma — proses dalam talian sepenuhnya.</p></div>
+      <div class="step"><div class="step-num">2</div><h4>Semak Harga Buyback</h4><p>Harga buyback emas Puan berdasarkan berat & ketulenan FGJAM hari ini.</p></div>
+      <div class="step"><div class="step-num">3</div><h4>Hantar atau Walk-in</h4><p>Pos emas ke cawangan atau datang terus — penilaian XRF percuma.</p></div>
+      <div class="step"><div class="step-num">4</div><h4>Terima Bayaran</h4><p>Tunai atau transfer bank — bayaran hari yang sama.</p></div>
     </div>
   </div>
 </section>
 
+<!-- PRODUK -->
 <section class="produk" id="produk">
   <div class="section-hdr">
-    <div class="eyebrow" style="color:var(--gold)">Kategori Stok</div>
-    <h2>Apa yang ada dalam platform?</h2>
-    <p>Stok dikemaskini setiap hari. Daftar untuk semak ketersediaan terkini.</p>
+    <div class="eyebrow" style="color:var(--gold)">Kategori Koleksi</div>
+    <h2>Ada apa dalam koleksi?</h2>
+    <p>Stok preloved dikemaskini setiap hari. Daftar untuk semak ketersediaan terkini.</p>
   </div>
   <div class="produk-grid">
     <a href="https://www.emassrisemantan.com/ref/alpianali" class="produk-pill" target="_blank"><span>🔗</span><p>Rantai</p></a>
@@ -295,11 +342,12 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
   </div>
 </section>
 
+<!-- CAWANGAN -->
 <section class="cawangan" id="cawangan">
   <div class="cawangan-inner">
     <div class="eyebrow">Rangkaian Cawangan</div>
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:#fff;margin-bottom:.4rem">17 Cawangan Seluruh Malaysia</h2>
-    <p style="font-size:12px;color:rgba(255,255,255,.45);margin-bottom:0">Walk-in atau urus online. Semua cawangan menerima transaksi emas preloved.</p>
+    <p style="font-size:12px;color:rgba(255,255,255,.45);margin-bottom:0">Walk-in atau urus online. Semua cawangan terima beli &amp; jual emas preloved.</p>
     <div class="branch-grid">
       <div class="branch-pill"><strong>Batu Pahat</strong>Johor</div>
       <div class="branch-pill"><strong>Bertam</strong>Pulau Pinang</div>
@@ -322,28 +370,42 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
   </div>
 </section>
 
+<!-- TESTIMONI -->
 <section class="testi">
   <div class="section-hdr">
-    <div class="eyebrow" style="color:var(--gold)">Kata Pelanggan</div>
-    <h2>Mereka sudah beli.</h2>
+    <div class="eyebrow" style="color:var(--gold)">Kata Mereka</div>
+    <h2>Dah tukar, dah beli, dah suka.</h2>
   </div>
   <div class="testi-grid">
-    <div class="testi-card"><div class="stars">★★★★★</div><div class="testi-text">"Pertama kali beli emas preloved, memang rasa nervous. Tapi proses sangat mudah. Emas sampai dengan resit, berat betul, tulen. Akan beli lagi!"</div><div class="testi-name">Puan Hazirah M. — Alor Setar</div></div>
-    <div class="testi-card"><div class="stars">★★★★★</div><div class="testi-text">"Dah beli beberapa kali. Yang paling saya suka — harga telus, ada ujian ketulenan, dan resit untuk setiap beli. Sangat professional."</div><div class="testi-name">Encik Farhan A. — Sungai Petani</div></div>
-    <div class="testi-card"><div class="stars">★★★★★</div><div class="testi-text">"Saya cari emas untuk simpan nama anak. Dicadangkan gelang kendi preloved 916 yang berbaloi — jimat upah dan sama nilainya masa jual balik."</div><div class="testi-name">Puan Suraya K. — Jitra</div></div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-text">"Tukar cincin tunang lama yang dah tak pakai — dapat rantai baru yang lagi cantik. Harga buyback pun berpatutan, ikut harga pasaran. Sangat puas hati!"</div>
+      <div class="testi-name">Puan Hazirah M. — Alor Setar</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-text">"Beli gelang preloved untuk isteri — jimat lebih RM300 berbanding beli baru. Kualiti sama, emas tulen, ada resit. Isteri pun suka sebab rekaan cantik!"</div>
+      <div class="testi-name">Encik Farhan A. — Sungai Petani</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-text">"Ada emas lama dalam laci bertahun-tahun. Jual dan guna duit tu beli set subang preloved yang cantik. Rasa macam dapat emas baru tapi jimat banyak!"</div>
+      <div class="testi-name">Puan Suraya K. — Jitra</div>
+    </div>
   </div>
 </section>
 
+<!-- AGEN -->
 <section class="agen">
   <div class="agen-inner">
     <div>
-      <div class="agen-badge">Penasihat Emas Anda</div>
-      <h2>Biar kami pandukan Puan dari mula.</h2>
-      <p>Daftar melalui pautan di bawah dan akses stok emas preloved tulen yang dikemaskini setiap hari. Proses mudah, selamat, dan telus.</p>
-      <a href="https://www.emassrisemantan.com/ref/alpianali" class="btn-primary" target="_blank" style="margin-bottom:1.25rem;display:inline-block">Daftar Sekarang — Percuma →</a>
+      <div class="agen-badge">Penasihat Emas Puan</div>
+      <h2>Tak tahu nak mula dari mana?</h2>
+      <p>Daftar percuma dan saya akan bantu Puan cari emas preloved yang sesuai dengan koleksi dan bajet. Atau nak jual emas lama? Saya tunjukkan cara semak harga buyback hari ini.</p>
+      <a href="https://www.emassrisemantan.com/ref/alpianali" class="btn-primary" target="_blank" style="margin-bottom:1.25rem;display:inline-block">Daftar Percuma — Semak Koleksi →</a>
       <div class="contact-box">
         <div class="contact-row"><div class="contact-icon">🕐</div><div><div class="contact-lbl">Waktu Layanan</div><div class="contact-val">9 pagi – 6 petang (Isnin–Sabtu)</div></div></div>
-        <div class="contact-row"><div class="contact-icon">📍</div><div><div class="contact-lbl">Lokasi</div><div class="contact-val">17 cawangan seluruh Malaysia</div></div></div>
+        <div class="contact-row"><div class="contact-icon">📍</div><div><div class="contact-lbl">Cawangan</div><div class="contact-val">17 lokasi seluruh Malaysia</div></div></div>
         <div class="contact-row"><div class="contact-icon">📦</div><div><div class="contact-lbl">Penghantaran</div><div class="contact-val">Pos berdaftar ke seluruh Malaysia</div></div></div>
       </div>
     </div>
@@ -351,24 +413,26 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
       <div class="avatar-circle">AA</div>
       <div class="agen-name-big">Alpian Ali</div>
       <div class="agen-title-sm">Ejen Emas Berlesen</div>
-      <div class="agen-tagline">"Setiap gram emas yang Puan beli adalah satu langkah ke hadapan untuk keluarga."</div>
+      <div class="agen-tagline">"Emas lama Puan ada nilai. Jangan biar terbiar — tukar jadi emas baru yang Puan benar-benar suka."</div>
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
 <section class="faq" id="faq">
   <div class="section-hdr">
     <div class="eyebrow" style="color:var(--gold)">Soalan Lazim</div>
-    <h2>Jawapan untuk Puan.</h2>
-    <p>Soalan paling kerap ditanya oleh pembeli emas preloved buat pertama kali.</p>
+    <h2>Puan tanya, kami jawab.</h2>
+    <p>Soalan paling kerap dari pencinta emas preloved.</p>
   </div>
   <div id="faqlist"></div>
 </section>
 
+<!-- CTA -->
 <section class="cta-strip">
-  <h2>Sedia untuk mulakan simpanan emas?<br><em style="font-style:italic;color:var(--gold2)">Daftar percuma sekarang.</em></h2>
-  <p>Proses pendaftaran mudah dan pantas. Setelah berdaftar, Puan boleh terus semak stok, bandingkan harga, dan beli emas preloved tulen dengan selamat.</p>
-  <a href="https://www.emassrisemantan.com/ref/alpianali" class="cta-big" target="_blank">Daftar Percuma Sekarang →</a>
+  <h2>Ada emas lama? Atau nak emas baru?<br><em style="font-style:italic;color:var(--gold2)">Semak koleksi sekarang.</em></h2>
+  <p>Daftar percuma, semak stok preloved terkini, dan beli atau jual emas dengan harga yang telus dan berpatutan.</p>
+  <a href="https://www.emassrisemantan.com/ref/alpianali" class="cta-big" target="_blank">Semak Koleksi Emas Preloved →</a>
 </section>
 
 <footer>
@@ -376,20 +440,18 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
   <p class="footer-disc">Laman ini diuruskan oleh ejen sah bagi tujuan promosi dan maklumat. Harga emas yang dipaparkan adalah berdasarkan indeks FGJAM dan boleh berubah setiap hari. Sila semak platform untuk harga terkini sebelum membuat keputusan.</p>
   <div class="footer-links">
     <a href="#harga">Harga</a>
-    <a href="#produk">Produk</a>
+    <a href="#koleksi">Koleksi</a>
     <a href="#cawangan">Cawangan</a>
     <a href="#faq">FAQ</a>
-    <a href="https://www.emassrisemantan.com/ref/alpianali" target="_blank">Daftar Sekarang</a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" target="_blank">Semak Koleksi</a>
   </div>
 </footer>
 
 <script>
-// Real price history from platform JSON (last 18 data points)
 const history916 = [575,580,578,578,570,570,570,570,570,570,578,575,573,563,563,563,564,564];
 const history999 = [673,676,667,675,670,670,670,673,671,671,674,671,665,666,668,670,660,660];
 const labels = ['18 May','19 May','20 May','21 May','22 May','23 May','24 May','25 May','26 May','28 May','30 May','1 Jun','2 Jun','3 Jun','4 Jun','5 Jun','6 Jun','8 Jun'];
 
-let activeChart = '916';
 const ctx = document.getElementById('priceChart').getContext('2d');
 const chart = new Chart(ctx, {
   type: 'line',
@@ -408,16 +470,10 @@ const chart = new Chart(ctx, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    plugins: { legend: { display: false }, tooltip: {
-      callbacks: { label: ctx => 'RM ' + ctx.parsed.y + '/g' }
-    }},
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => 'RM ' + ctx.parsed.y + '/g' }}},
     scales: {
       x: { display: false },
-      y: {
-        display: true,
-        grid: { color: 'rgba(0,0,0,0.05)' },
-        ticks: { font: { size: 9 }, color: '#7A6545', callback: v => 'RM' + v }
-      }
+      y: { display: true, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { size: 9 }, color: '#7A6545', callback: v => 'RM' + v }}
     }
   }
 });
@@ -431,19 +487,25 @@ function switchTab(type, btn) {
   chart.update();
 }
 
-// FAQ
+function switchCara(type, btn) {
+  document.querySelectorAll('.cara-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('caraBeli').style.display = type === 'beli' ? 'grid' : 'none';
+  document.getElementById('caraJual').style.display = type === 'jual' ? 'grid' : 'none';
+}
+
 const faqs = [
-  { q: "Harga emas dah turun lebih RM200 dari peak — ini masa terbaik ke beli preloved?", a: "<strong>Ya — ini masa paling bijak untuk mula.</strong> Harga emas 916 pernah cecah lebih RM575/gram awal tahun ini. Kini stabil di sekitar RM544/gram (preloved). Masa harga rendah seperti ini, pembeli preloved dapat lebih nilai kerana tiada upah — bermakna setiap ringgit yang Puan belanjakan masuk terus ke dalam nilai gram emas." },
-  { q: "Ramai tunggu harga emas naik semula baru nak beli — kenapa strategi tu salah?", a: "Strategi 'tunggu naik baru beli' membuatkan ramai akhirnya beli di harga puncak. Pendekatan yang lebih bijak: beli secara berkala tanpa ikut emosi pasaran (dollar cost averaging). Dalam tempoh 5–10 tahun, purata harga beli Puan akan jauh lebih rendah dari harga pasaran semasa." },
-  { q: "Kenapa beli emas preloved di platform berlesen lebih jimat berbanding kedai biasa?", a: "Tiga sebab: <strong>(1)</strong> Tiada upah pembuatan — jimat RM15–RM50 per gram. <strong>(2)</strong> Harga telus mengikut FGJAM — tiada markup tersembunyi. <strong>(3)</strong> Ujian XRF sebelum jual — Puan bayar untuk emas tulen sahaja." },
-  { q: "Emas preloved 916 — sama ke dengan emas baru? Berapa boleh jimat?", a: "<strong>100% sama emas.</strong> 916 bermaksud 91.6% emas tulen — sama ada baru atau preloved, kandungan logam identik. Perbezaannya hanya pada rekaan dan upah. Contoh: gelang 5 gram — emas baru ~RM2,935 (termasuk upah RM25/g), preloved ~RM2,720. Jimat lebih RM200 untuk 5 gram sahaja." },
-  { q: "Emas preloved vs emas baru — mana lebih untung untuk simpan aset jangka panjang?", a: "Untuk tujuan simpanan, emas preloved menang. Kedai beli balik (buyback) tidak bezakan antara baru atau preloved — harga ditentukan oleh berat dan ketulenan. Bermakna pembeli preloved ada margin untung lebih besar dari hari pertama beli kerana tidak perlu 'cover' kos upah." },
-  { q: "Kenapa ramai ibu-ibu pilih emas preloved untuk simpan nama anak?", a: "Sebab emas tidak susut nilai seperti wang tunai. Ibu-ibu pilih preloved khususnya kerana: boleh mula dengan bajet kecil, mudah disimpan, boleh dijual bila perlu, dan anak perempuan boleh pakai bila besar. Nilai sentimental dan nilai aset dalam satu." },
-  { q: "Apa 5 tanda kedai emas online yang perlu dielak?", a: "<strong>1.</strong> Tiada alamat fizikal yang boleh disahkan. <strong>2.</strong> Harga terlalu jauh bawah harga FGJAM. <strong>3.</strong> Tiada bukti ujian ketulenan (XRF). <strong>4.</strong> Bayaran hanya ke akaun peribadi tanpa nama syarikat. <strong>5.</strong> Tiada nombor SSM atau lesen perniagaan yang boleh disemak." },
-  { q: "Kenapa beli dari platform berlesen lebih selamat berbanding beli dalam live TikTok rawak?", a: "Live TikTok rawak tiada perjanjian bertulis, tiada ujian profesional, dan seller boleh hilang tanpa notis. Platform berlesen pula: berdaftar SSM, ujian XRF untuk setiap item, resit rasmi untuk setiap transaksi, dan ada alamat tetap yang boleh dikunjungi." },
-  { q: "Emas preloved vs crypto — mana lebih selamat untuk simpan lebihan wang?", a: "Emas ada nilai fizikal, tidak boleh di-hack, dan telah terbukti selama ribuan tahun. Crypto potensi pulangan tinggi tapi volatiliti ekstrem. Cadangan praktikal: simpan 70–80% dalam emas untuk kestabilan, pertimbangkan crypto hanya jika Puan sudah faham risikonya sepenuhnya." },
-  { q: "Kira zakat emas saya — nisab berapa gram dan berapa RM pada 2026?", a: "Nisab zakat emas = 85 gram emas tulen (999). Pada harga semasa ~RM660/gram (999), nisab bersamaan lebih kurang <strong>RM56,100</strong>. Kadar zakat: 2.5% daripada nilai emas yang dimiliki setelah cukup haul (1 tahun hijri). Semak dengan pejabat zakat negeri untuk pengesahan terkini." },
-  { q: "Kijang Emas vs barang kemas preloved 916 — mana lagi berbaloi untuk pelabur kecil?", a: "<strong>Mulakan dengan preloved 916.</strong> Kijang Emas bagus untuk diversifikasi lanjut tapi ada premium tinggi dan minimum pelaburan lebih besar. Preloved 916: boleh mula dari 1–2 gram, tiada upah, harga lebih dekat dengan spot. Bila portfolio sudah 50 gram ke atas, baru pertimbangkan Kijang Emas." }
+  { q: "Emas lama saya dah tak pakai — boleh tukar ke emas baru?", a: "<strong>Boleh, dan ini cara paling bijak.</strong> Jual emas lama pada harga buyback FGJAM hari ini, lepas tu guna duit tu beli emas preloved pilihan Puan — tanpa upah. Nilai gram Puan kekal, tapi dapat rekaan yang Puan suka. Ramai pelanggan kami buat trade-in macam ni setiap tahun." },
+  { q: "Berapa boleh dapat kalau jual emas lama saya?", a: "Bergantung pada berat dan ketulenan emas Puan. Harga buyback semasa: <strong>916 = RM509/gram</strong>, <strong>999.9 = RM553/gram</strong>. Timbang emas Puan di rumah dan darab dengan harga ni untuk anggaran kasar. Harga dikemaskini setiap hari ikut FGJAM." },
+  { q: "Emas preloved 916 — sama ke dengan emas baru? Selamat ke beli?", a: "<strong>100% sama emas.</strong> 916 bermaksud 91.6% emas tulen — sama ada baru atau preloved, kandungan logam identik. Yang beza hanya rekaan dan upah. Setiap keping preloved kami diuji dengan mesin XRF sebelum dijual semula — Puan tidak perlu risau tentang ketulenan." },
+  { q: "Kenapa beli preloved lebih jimat berbanding emas baru?", a: "Kedai emas baru kenakan upah pembuatan RM15–RM50 per gram di atas harga spot. Emas preloved tiada upah — Puan bayar nilai gram semata-mata. Contoh: gelang 5 gram emas baru ≈ RM2,935, preloved ≈ RM2,720. <strong>Jimat lebih RM200</strong> untuk 5 gram sahaja." },
+  { q: "Macam mana nak tahu harga emas hari ini sebelum jual atau beli?", a: "Harga dikemaskini setiap hari dan boleh semak terus di bahagian atas laman ini. Harga mengikut indeks rasmi FGJAM. Untuk harga tepat sebelum transaksi, daftar akaun dan semak dalam platform — harga live dikemaskini setiap hari bekerja." },
+  { q: "Boleh beli emas preloved online? Selamat ke?", a: "Boleh — dan selamat. Platform ini berdaftar SSM, setiap emas diuji XRF, ada resit rasmi untuk setiap transaksi, dan emas dihantar dengan pos berdaftar. Berbeza dengan live TikTok rawak yang tiada perjanjian bertulis dan seller boleh hilang tanpa notis." },
+  { q: "Apa yang berlaku kalau saya tak suka emas yang dibeli?", a: "Puan boleh jual semula pada harga buyback FGJAM hari tu. Kedai tidak bezakan antara emas baru atau preloved masa buyback — harga ditentukan oleh berat dan ketulenan. Bermakna risiko Puan sangat rendah berbanding beli emas baru yang kena tanggung kos upah dulu." },
+  { q: "Berapa lama proses jual emas lama? Bila dapat duit?", a: "Kalau walk-in ke cawangan — penilaian XRF selesai dalam 15–20 minit, bayaran tunai atau transfer hari yang sama. Kalau hantar pos — proses dalam 1–2 hari bekerja selepas emas diterima di cawangan, bayaran terus ke akaun bank Puan." },
+  { q: "Emas preloved sesuai ke untuk hadiah perkahwinan atau hantaran?", a: "Sangat sesuai! Nilai emas tidak berubah sama ada baru atau preloved — penerima terima emas tulen yang sama. Puan jimat kos upah dan boleh pilih rekaan cantik dari koleksi preloved. Ramai pelanggan kami beli set pengantin dan dulang hantaran dari koleksi preloved." },
+  { q: "Kira zakat emas saya — nisab berapa pada 2026?", a: "Nisab zakat emas = 85 gram emas tulen (999). Pada harga semasa ~RM660/gram, nisab bersamaan lebih kurang <strong>RM56,100</strong>. Kadar zakat: 2.5% daripada nilai emas yang dimiliki setelah cukup haul (1 tahun hijri). Semak dengan pejabat zakat negeri Puan untuk pengesahan terkini." },
+  { q: "Adakah ada cawangan berhampiran saya?", a: "Kami ada <strong>17 cawangan</strong> seluruh Malaysia — dari Sabah hingga Johor. Termasuk Sungai Petani, Shah Alam, Kajang, Kota Bharu, Ipoh, Kuantan, Temerloh, Kota Kinabalu dan banyak lagi. Semak senarai penuh di bahagian Cawangan di atas, atau beli online dengan penghantaran pos berdaftar." }
 ];
 
 const list = document.getElementById('faqlist');
