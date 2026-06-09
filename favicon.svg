@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8C97A"/>
+      <stop offset="50%" style="stop-color:#C9963A"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+  </defs>
+  <!-- Diamond shape -->
+  <polygon points="50,5 95,50 50,95 5,50" fill="url(#gold)"/>
+  <!-- Inner highlight -->
+  <polygon points="50,18 82,50 50,82 18,50" fill="none" stroke="#FBF5E6" stroke-width="2" opacity="0.4"/>
+  <!-- Center dot -->
+  <circle cx="50" cy="50" r="6" fill="#FBF5E6" opacity="0.6"/>
+</svg>
