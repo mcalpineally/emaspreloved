@@ -510,11 +510,6 @@ async function fetchLivePrices() {
   }
 }
 
-// Run on load
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(fetchLivePrices, 500);
-});
-
 const ctx = document.getElementById('priceChart').getContext('2d');
 const chart = new Chart(ctx, {
   type: 'line',
@@ -584,6 +579,11 @@ function tf(i){
   items.forEach(el=>el.classList.remove('open'));
   if(!o) items[i].classList.add('open');
 }
+
+// Run live price fetch after everything is ready
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(fetchLivePrices, 500);
+});
 </script>
 </body>
 </html>
