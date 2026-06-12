@@ -208,7 +208,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
   <div>
     <div class="hero-badge">✦ Emas Tulen · Harga Tanpa Upah</div>
     <h1>Emas Lama<br>Jadi <em>Emas Baru</em><br>Yang Cantik.</h1>
-    <p class="hero-desc">Jual emas lama Puan, dapat emas baru yang lagi cantik... tanpa rugi. Atau beli emas preloved 916 &amp; 999 dengan harga gram penuh... tanpa upah. Setiap keping disahkan tulen dengan mesin XRF.</p>
+    <p class="hero-desc">Jual emas lama Puan, dapat emas baru yang lagi cantik — tanpa rugi. Atau beli emas preloved 916 &amp; 999 dengan harga gram penuh, tanpa upah. Setiap keping disahkan tulen dengan mesin XRF.</p>
     <div class="hero-btns">
       <a href="https://www.emassrisemantan.com/ref/alpianali" class="btn-primary" target="_blank">Semak Koleksi Sekarang →</a>
       <a href="#cara" class="btn-ghost">Cara Tukar Emas</a>
@@ -217,7 +217,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
   <div id="harga">
     <div class="price-card">
       <div class="price-card-header">
-        <span class="price-card-title">Harga Emas Preloved Hari Ini</span>
+        <span class="price-card-title">Harga Emas Semasa</span>
         <span class="price-live-badge">● Langsung</span>
       </div>
       <div class="price-tabs">
@@ -448,9 +448,72 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
 </footer>
 
 <script>
+// ── Live gold price fetch from Cloudflare Worker ──────────────────
 const history916 = [575,580,578,578,570,570,570,570,570,570,578,575,573,563,563,563,564,564];
 const history999 = [673,676,667,675,670,670,670,673,671,671,674,671,665,666,668,670,660,660];
 const labels = ['18 May','19 May','20 May','21 May','22 May','23 May','24 May','25 May','26 May','28 May','30 May','1 Jun','2 Jun','3 Jun','4 Jun','5 Jun','6 Jun','8 Jun'];
+
+// Fetch live prices from Worker API
+async function fetchLivePrices() {
+  try {
+    const res = await fetch('/api/gold-price');
+    if (!res.ok) throw new Error('API error');
+    const data = await res.json();
+
+    // Update 916 prices
+    const g916 = data['916'];
+    const g999 = data['999'];
+
+    document.querySelector('#priceGrid916 .price-box:nth-child(1) .price-box-val').textContent = 'RM ' + g916.buy;
+    document.querySelector('#priceGrid916 .price-box:nth-child(2) .price-box-val').textContent = 'RM ' + g916.preloved;
+    document.querySelector('#priceGrid916 .price-box:nth-child(3) .price-box-val').textContent = 'RM ' + g916.buyback;
+
+    // Update 999 prices
+    document.querySelector('#priceGrid999 .price-box:nth-child(1) .price-box-val').textContent = 'RM ' + g999.buy;
+    document.querySelector('#priceGrid999 .price-box:nth-child(2) .price-box-val').textContent = 'RM ' + g999.preloved;
+    document.querySelector('#priceGrid999 .price-box:nth-child(3) .price-box-val').textContent = 'RM ' + g999.buyback;
+
+    // Update FAQ buyback prices
+    const faqEls = document.querySelectorAll('.faq-ans strong');
+    faqEls.forEach(el => {
+      if (el.textContent.includes('916 = RM')) {
+        el.textContent = '916 = RM' + g916.buyback + '/gram';
+      }
+      if (el.textContent.includes('999.9 = RM')) {
+        el.textContent = '999.9 = RM' + g999.buyback + '/gram';
+      }
+    });
+
+    // Update timestamp
+    const updated = new Date(data.fetched_at);
+    const myDate = updated.toLocaleDateString('ms-MY', {day:'numeric',month:'short',year:'numeric'});
+    const myTime = updated.toLocaleTimeString('ms-MY', {hour:'2-digit',minute:'2-digit'});
+    document.querySelector('.price-update').textContent = 'Dikemaskini: ' + myDate + ' · ' + myTime + ' · Sumber: FGJAM';
+
+    // Update chart with latest price appended
+    history916.push(g916.preloved);
+    history916.shift();
+    history999.push(g999.preloved);
+    history999.shift();
+    labels.push('Hari Ini');
+    labels.shift();
+    chart.data.labels = labels;
+    chart.update();
+
+    // Remove loading state
+    document.querySelector('.price-live-badge').textContent = '● Live';
+    document.querySelector('.price-live-badge').style.color = '#2d8a4e';
+
+  } catch(e) {
+    // Silent fail — static prices remain
+    document.querySelector('.price-live-badge').textContent = '● Semalam';
+  }
+}
+
+// Run on load
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(fetchLivePrices, 500);
+});
 
 const ctx = document.getElementById('priceChart').getContext('2d');
 const chart = new Chart(ctx, {
