@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduan Emas Preloved Malaysia — Tips, Harga & Cara Beli Jual</title>
+<meta name="description" content="Artikel dan panduan lengkap tentang emas preloved Malaysia — cara beli, cara jual, semak ketulenan, kira zakat, dan banyak lagi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9963A;--gold2:#E8C97A;--gold-pale:#FBF5E6;
+  --dark:#1A1208;--dark2:#2E1F05;--ink:#2C1F0A;--muted:#7A6545;
+  --border:#E8D9B8;--white:#FFFDF7;--r:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);font-size:15px;line-height:1.7;overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(255,253,247,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.nav-inner{max-width:940px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--dark);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{font-size:13px;font-weight:500;background:var(--gold);color:#fff;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:var(--dark2)}
+
+/* HERO */
+.blog-hero{background:var(--dark);padding:3rem 1.5rem}
+.blog-hero-inner{max-width:940px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:.75rem}
+.blog-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,42px);font-weight:700;color:#fff;margin-bottom:.75rem;line-height:1.2}
+.blog-hero h1 em{font-style:italic;color:var(--gold2)}
+.blog-hero p{font-size:13px;color:rgba(255,255,255,.55);max-width:520px}
+
+/* FILTER */
+.filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:.75rem 1.5rem;position:sticky;top:56px;z-index:90}
+.filter-inner{max-width:940px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filter-label{font-size:11px;color:var(--muted);font-weight:500;margin-right:4px}
+.filter-btn{font-size:12px;padding:4px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;cursor:pointer;font-family:'Inter',sans-serif;color:var(--muted);transition:all .15s;white-space:nowrap}
+.filter-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.filter-btn:hover:not(.active){background:var(--gold-pale)}
+
+/* SEARCH */
+.search-wrap{max-width:940px;margin:1.5rem auto 0;padding:0 1.5rem}
+.search-input{width:100%;padding:10px 16px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:'Inter',sans-serif;color:var(--ink);background:#fff;outline:none;transition:border-color .2s}
+.search-input:focus{border-color:var(--gold)}
+
+/* GRID */
+.blog-section{max-width:940px;margin:0 auto;padding:1.5rem 1.5rem 3rem}
+.blog-count{font-size:12px;color:var(--muted);margin-bottom:1rem}
+.blog-count span{font-weight:500;color:var(--ink)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.blog-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;text-decoration:none;color:var(--ink);display:block;transition:border-color .2s,box-shadow .2s;position:relative}
+.blog-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,150,58,.1);transform:translateY(-1px)}
+.blog-tag{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);border:1px solid var(--border);border-radius:20px;padding:2px 10px;display:inline-block;margin-bottom:10px}
+.blog-title{font-size:13px;font-weight:500;color:var(--dark);line-height:1.55;margin-bottom:10px}
+.blog-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:8px;margin-top:auto}
+.blog-vol{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:4px}
+.blog-read{font-size:11px;font-weight:500;color:var(--gold)}
+.blog-card.comp-low .blog-tag{color:#2d8a4e;background:#e8f5ee;border-color:#c3e6d0}
+.blog-card.comp-med .blog-tag{color:#b35900;background:#fff3e6;border-color:#ffd6a5}
+.no-results{text-align:center;padding:3rem 1rem;color:var(--muted);grid-column:1/-1}
+.no-results p{font-size:14px;margin-top:.5rem}
+
+/* CTA STRIP */
+.cta-strip{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);padding:3rem 1.5rem;text-align:center}
+.cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:#fff;margin-bottom:.6rem}
+.cta-strip p{font-size:13px;color:rgba(255,255,255,.55);max-width:420px;margin:0 auto 1.5rem}
+.cta-big{background:var(--gold);color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
+.cta-big:hover{background:#a87520}
+
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding:1.5rem;text-align:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:6px}
+.footer-logo span{color:var(--gold2)}
+.footer-disc{font-size:11px;color:rgba(255,255,255,.28);max-width:460px;margin:0 auto .75rem;line-height:1.7}
+.footer-links{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
+.footer-links a{font-size:11px;color:rgba(255,255,255,.35);text-decoration:none}
+.footer-links a:hover{color:var(--gold2)}
+
+@media(max-width:700px){
+  .blog-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .filter-inner{gap:6px}
+}
+@media(max-width:480px){
+  .blog-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Emas Preloved <span>◆</span></a>
+    <ul class="nav-links">
+      <li><a href="/">Laman Utama</a></li>
+      <li><a href="/#harga">Harga</a></li>
+      <li><a href="/#cawangan">Cawangan</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+    </ul>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="nav-cta" target="_blank">Semak Koleksi →</a>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <div class="eyebrow">Panduan & Tips</div>
+    <h1>Baca Sebelum Beli<br>atau <em>Jual Emas.</em></h1>
+    <p>Artikel berguna untuk pencinta emas preloved Malaysia — cara beli, cara jual, semak ketulenan, kira zakat dan banyak lagi.</p>
+  </div>
+</div>
+
+<div class="search-wrap">
+  <input type="text" class="search-input" id="searchInput" placeholder="Cari artikel... contoh: cara jual, zakat, 916 vs 999" oninput="filterPosts()">
+</div>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">Tapis:</span>
+    <button class="filter-btn active" onclick="setFilter('Semua',this)">Semua</button>
+    <button class="filter-btn" onclick="setFilter('Panduan Beli',this)">Panduan Beli</button>
+    <button class="filter-btn" onclick="setFilter('Panduan Jual',this)">Panduan Jual</button>
+    <button class="filter-btn" onclick="setFilter('Perbandingan',this)">Perbandingan</button>
+    <button class="filter-btn" onclick="setFilter('Harga',this)">Harga</button>
+    <button class="filter-btn" onclick="setFilter('Keselamatan',this)">Keselamatan</button>
+    <button class="filter-btn" onclick="setFilter('Agama',this)">Agama</button>
+  </div>
+</div>
+
+<div class="blog-section">
+  <div class="blog-count" id="blogCount"></div>
+  <div class="blog-grid" id="blogGrid"></div>
+</div>
+
+<section class="cta-strip">
+  <h2>Dah tahu semua? Semak koleksi sekarang.</h2>
+  <p>Beli emas preloved tulen tanpa upah, atau jual emas lama Puan dengan harga FGJAM.</p>
+  <a href="https://www.emassrisemantan.com/ref/alpianali" class="cta-big" target="_blank">Semak Koleksi Emas Preloved →</a>
+</section>
+
+<footer>
+  <div class="footer-logo">Emas Preloved Malaysia <span>◆</span></div>
+  <p class="footer-disc">Laman ini diuruskan oleh ejen sah bagi tujuan promosi dan maklumat. Harga emas yang dipaparkan adalah berdasarkan indeks FGJAM dan boleh berubah setiap hari.</p>
+  <div class="footer-links">
+    <a href="/">Laman Utama</a>
+    <a href="/#harga">Harga</a>
+    <a href="/#cawangan">Cawangan</a>
+    <a href="/#faq">FAQ</a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" target="_blank">Semak Koleksi</a>
+  </div>
+</footer>
+
+<script>
+const posts = [
+  {tag:"Perbandingan", title:"Emas Preloved vs Emas Baru — Mana Lebih Untung untuk Simpanan?", vol:"1,800", comp:"LOW", kw:"emas preloved vs emas baru"},
+  {tag:"Panduan Beli", title:"Cara Beli Emas Preloved dengan Selamat — Panduan Lengkap 2026", vol:"2,100", comp:"LOW", kw:"cara beli emas preloved"},
+  {tag:"Keselamatan", title:"Adakah Emas Preloved Selamat Dibeli? Jawapan Jujur + Tips Elak Tipu", vol:"980", comp:"LOW", kw:"emas preloved selamat ke"},
+  {tag:"Perbandingan", title:"Beza Emas Preloved dan Emas Baru — 5 Perkara yang Perlu Tahu", vol:"1,200", comp:"LOW", kw:"beza emas preloved dan baru"},
+  {tag:"Panduan Jual", title:"Cara Jual Emas Terpakai di Malaysia — Proses Mudah & Harga Terbaik", vol:"3,400", comp:"LOW", kw:"cara jual emas terpakai"},
+  {tag:"Harga", title:"Harga Emas Preloved 916 Hari Ini — Bandingkan Kadar Terkini", vol:"2,600", comp:"MED", kw:"harga emas preloved 916 hari ini"},
+  {tag:"Panduan Beli", title:"7 Sebab Kenapa Beli Emas Preloved Lebih Bijak daripada Beli Baru", vol:"890", comp:"LOW", kw:"kenapa beli emas preloved"},
+  {tag:"Keselamatan", title:"Bolehkah Emas Terpakai Dipercayai? Semua yang Perlu Anda Tahu", vol:"720", comp:"LOW", kw:"emas terpakai boleh dipercayai"},
+  {tag:"Panduan Beli", title:"Cara Simpan Emas di Malaysia — 4 Kaedah Terbaik untuk Perlindungan Nilai", vol:"8,900", comp:"MED", kw:"cara simpan emas"},
+  {tag:"Perbandingan", title:"Emas Sendiri vs Ar-Rahnu — Mana Lebih Menguntungkan?", vol:"2,100", comp:"LOW", kw:"emas vs arrahnu"},
+  {tag:"Agama", title:"Kira Zakat Emas 2026 — Nisab, Kadar & Cara Pengiraan Mudah", vol:"3,800", comp:"LOW", kw:"zakat emas 2026"},
+  {tag:"Analisis", title:"Emas Preloved — Berbaloi Beli atau Tak? Analisis Jujur 2026", vol:"780", comp:"LOW", kw:"emas preloved berbaloi ke"},
+  {tag:"Harga", title:"Bila Masa Terbaik Beli Emas di Malaysia? (Analisis Harga 2023-2026)", vol:"4,200", comp:"LOW", kw:"bila masa terbaik beli emas"},
+  {tag:"Perbandingan", title:"Emas 916 vs 999 — Mana Lebih Bagus untuk Simpan & Pakai?", vol:"5,600", comp:"MED", kw:"emas 916 vs 999"},
+  {tag:"Perbandingan", title:"Emas vs Crypto di Malaysia 2026 — Mana Lebih Selamat untuk Simpanan?", vol:"2,800", comp:"MED", kw:"emas vs crypto malaysia"},
+  {tag:"Panduan Beli", title:"Cara Cek Ketulenan Emas — 5 Kaedah XRF, Asid & Ujian Mudah", vol:"6,700", comp:"LOW", kw:"cara cek ketulenan emas"},
+  {tag:"Keselamatan", title:"Jangan Kena Tipu Beli Emas Preloved — 8 Tanda Merah yang Wajib Tahu", vol:"540", comp:"LOW", kw:"emas preloved kena tipu"},
+  {tag:"Harga", title:"Kenapa Harga Emas Turun & Apa yang Perlu Buat? Panduan 2026", vol:"9,200", comp:"MED", kw:"harga emas turun"},
+  {tag:"Keluarga", title:"Emas sebagai Simpanan Anak — Panduan Ibu Bapa Malaysia 2026", vol:"3,100", comp:"LOW", kw:"emas simpanan anak"},
+  {tag:"Perbandingan", title:"Gold Bar vs Barang Kemas — Mana Lebih Baik untuk Simpanan?", vol:"1,800", comp:"LOW", kw:"gold bar vs barang kemas"},
+];
+
+let activeFilter = 'Semua';
+let searchTerm = '';
+
+function setFilter(cat, btn) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid();
+}
+
+function filterPosts() {
+  searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  renderGrid();
+}
+
+function renderGrid() {
+  const grid = document.getElementById('blogGrid');
+  const countEl = document.getElementById('blogCount');
+  grid.innerHTML = '';
+
+  const filtered = posts.filter(p => {
+    const matchCat = activeFilter === 'Semua' || p.tag === activeFilter;
+    const matchSearch = !searchTerm || 
+      p.title.toLowerCase().includes(searchTerm) || 
+      p.kw.toLowerCase().includes(searchTerm) ||
+      p.tag.toLowerCase().includes(searchTerm);
+    return matchCat && matchSearch;
+  });
+
+  countEl.innerHTML = `Menunjukkan <span>${filtered.length}</span> daripada ${posts.length} artikel`;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="no-results"><div style="font-size:32px">🔍</div><p>Tiada artikel sepadan. Cuba carian lain.</p></div>';
+    return;
+  }
+
+  filtered.forEach(p => {
+    const card = document.createElement('a');
+    card.className = 'blog-card comp-' + p.comp.toLowerCase();
+    card.href = 'https://www.emassrisemantan.com/ref/alpianali';
+    card.target = '_blank';
+    card.innerHTML = `
+      <span class="blog-tag">${p.tag}</span>
+      <div class="blog-title">${p.title}</div>
+      <div class="blog-footer">
+        <span class="blog-vol">🔍 ${p.vol}/bln</span>
+        <span class="blog-read">Baca →</span>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+renderGrid();
+</script>
+</body>
+</html>
