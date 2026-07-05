@@ -6,18 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Panduan Emas Preloved Malaysia — Tips, Harga & Cara Beli Jual</title>
 <meta name="description" content="Artikel dan panduan lengkap tentang emas preloved Malaysia — cara beli, cara jual, semak ketulenan, kira zakat, dan banyak lagi.">
+<link rel="canonical" href="https://emaspreloved.com/blog/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --gold:#C9963A;--gold2:#E8C97A;--gold-pale:#FBF5E6;
-  --dark:#1A1208;--dark2:#2E1F05;--ink:#2C1F0A;--muted:#7A6545;
-  --border:#E8D9B8;--white:#FFFDF7;--r:12px;
-}
+:root{--gold:#C9963A;--gold2:#E8C97A;--gold-pale:#FBF5E6;--dark:#1A1208;--dark2:#2E1F05;--ink:#2C1F0A;--muted:#7A6545;--border:#E8D9B8;--white:#FFFDF7;--r:12px}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);font-size:15px;line-height:1.7;overflow-x:hidden}
-
 nav{position:sticky;top:0;z-index:100;background:rgba(255,253,247,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 1.5rem}
 .nav-inner{max-width:940px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--dark);text-decoration:none}
@@ -27,52 +23,42 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,253,247,0.96);backdrop
 .nav-links a:hover{color:var(--gold)}
 .nav-cta{font-size:13px;font-weight:500;background:var(--gold);color:#fff;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;text-decoration:none;white-space:nowrap}
 .nav-cta:hover{background:var(--dark2)}
-
-/* HERO */
 .blog-hero{background:var(--dark);padding:3rem 1.5rem}
 .blog-hero-inner{max-width:940px;margin:0 auto}
 .eyebrow{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:.75rem}
 .blog-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,42px);font-weight:700;color:#fff;margin-bottom:.75rem;line-height:1.2}
 .blog-hero h1 em{font-style:italic;color:var(--gold2)}
 .blog-hero p{font-size:13px;color:rgba(255,255,255,.55);max-width:520px}
-
-/* FILTER */
 .filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:.75rem 1.5rem;position:sticky;top:56px;z-index:90}
 .filter-inner{max-width:940px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .filter-label{font-size:11px;color:var(--muted);font-weight:500;margin-right:4px}
 .filter-btn{font-size:12px;padding:4px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;cursor:pointer;font-family:'Inter',sans-serif;color:var(--muted);transition:all .15s;white-space:nowrap}
 .filter-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
 .filter-btn:hover:not(.active){background:var(--gold-pale)}
-
-/* SEARCH */
 .search-wrap{max-width:940px;margin:1.5rem auto 0;padding:0 1.5rem}
 .search-input{width:100%;padding:10px 16px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:'Inter',sans-serif;color:var(--ink);background:#fff;outline:none;transition:border-color .2s}
 .search-input:focus{border-color:var(--gold)}
-
-/* GRID */
 .blog-section{max-width:940px;margin:0 auto;padding:1.5rem 1.5rem 3rem}
 .blog-count{font-size:12px;color:var(--muted);margin-bottom:1rem}
 .blog-count span{font-weight:500;color:var(--ink)}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .blog-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;text-decoration:none;color:var(--ink);display:block;transition:border-color .2s,box-shadow .2s;position:relative}
 .blog-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,150,58,.1);transform:translateY(-1px)}
+.blog-card.hidden{display:none}
 .blog-tag{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);border:1px solid var(--border);border-radius:20px;padding:2px 10px;display:inline-block;margin-bottom:10px}
 .blog-title{font-size:13px;font-weight:500;color:var(--dark);line-height:1.55;margin-bottom:10px}
 .blog-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:8px;margin-top:auto}
-.blog-vol{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:4px}
 .blog-read{font-size:11px;font-weight:500;color:var(--gold)}
 .blog-card.comp-low .blog-tag{color:#2d8a4e;background:#e8f5ee;border-color:#c3e6d0}
 .blog-card.comp-med .blog-tag{color:#b35900;background:#fff3e6;border-color:#ffd6a5}
 .no-results{text-align:center;padding:3rem 1rem;color:var(--muted);grid-column:1/-1}
+.no-results.hidden{display:none}
 .no-results p{font-size:14px;margin-top:.5rem}
-
-/* CTA STRIP */
 .cta-strip{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);padding:3rem 1.5rem;text-align:center}
 .cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:#fff;margin-bottom:.6rem}
 .cta-strip p{font-size:13px;color:rgba(255,255,255,.55);max-width:420px;margin:0 auto 1.5rem}
 .cta-big{background:var(--gold);color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
 .cta-big:hover{background:#a87520}
-
 footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding:1.5rem;text-align:center}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:6px}
 .footer-logo span{color:var(--gold2)}
@@ -80,15 +66,8 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
 .footer-links{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
 .footer-links a{font-size:11px;color:rgba(255,255,255,.35);text-decoration:none}
 .footer-links a:hover{color:var(--gold2)}
-
-@media(max-width:700px){
-  .blog-grid{grid-template-columns:1fr 1fr}
-  .nav-links{display:none}
-  .filter-inner{gap:6px}
-}
-@media(max-width:480px){
-  .blog-grid{grid-template-columns:1fr}
-}
+@media(max-width:700px){.blog-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.filter-inner{gap:6px}}
+@media(max-width:480px){.blog-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -102,7 +81,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
       <li><a href="/#cawangan">Cawangan</a></li>
       <li><a href="/#faq">FAQ</a></li>
     </ul>
-    <a href="https://www.emassrisemantan.com/ref/alpianali" class="nav-cta" target="_blank">Semak Koleksi →</a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" class="nav-cta" target="_blank" rel="noopener nofollow sponsored">Semak Koleksi →</a>
   </div>
 </nav>
 
@@ -115,31 +94,148 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
 </div>
 
 <div class="search-wrap">
-  <input type="text" class="search-input" id="searchInput" placeholder="Cari artikel... contoh: cara jual, zakat, 916 vs 999" oninput="filterPosts()">
+  <input type="text" class="search-input" id="searchInput" placeholder="Cari artikel... contoh: cara jual, zakat, 916 vs 999">
 </div>
 
 <div class="filter-bar">
   <div class="filter-inner">
     <span class="filter-label">Tapis:</span>
-    <button class="filter-btn active" onclick="setFilter('Semua',this)">Semua</button>
-    <button class="filter-btn" onclick="setFilter('Panduan Beli',this)">Panduan Beli</button>
-    <button class="filter-btn" onclick="setFilter('Panduan Jual',this)">Panduan Jual</button>
-    <button class="filter-btn" onclick="setFilter('Perbandingan',this)">Perbandingan</button>
-    <button class="filter-btn" onclick="setFilter('Harga',this)">Harga</button>
-    <button class="filter-btn" onclick="setFilter('Keselamatan',this)">Keselamatan</button>
-    <button class="filter-btn" onclick="setFilter('Agama',this)">Agama</button>
+    <button class="filter-btn active" data-cat="Semua">Semua</button>
+    <button class="filter-btn" data-cat="Panduan Beli">Panduan Beli</button>
+    <button class="filter-btn" data-cat="Panduan Jual">Panduan Jual</button>
+    <button class="filter-btn" data-cat="Perbandingan">Perbandingan</button>
+    <button class="filter-btn" data-cat="Harga">Harga</button>
+    <button class="filter-btn" data-cat="Keselamatan">Keselamatan</button>
+    <button class="filter-btn" data-cat="Agama">Agama</button>
   </div>
 </div>
 
 <div class="blog-section">
-  <div class="blog-count" id="blogCount"></div>
-  <div class="blog-grid" id="blogGrid"></div>
+  <div class="blog-count" id="blogCount">Menunjukkan <span>23</span> daripada 23 artikel</div>
+  <div class="blog-grid" id="blogGrid">
+      <a href="/blog/emas-preloved-vs-baru" class="blog-card comp-low" data-cat="Perbandingan" data-kw="emas preloved vs emas baru">
+        <span class="blog-tag">Perbandingan</span>
+        <div class="blog-title">Emas Preloved vs Emas Baru — Mana Lebih Untung untuk Simpanan?</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/cara-beli-emas-preloved" class="blog-card comp-low" data-cat="Panduan Beli" data-kw="cara beli emas preloved">
+        <span class="blog-tag">Panduan Beli</span>
+        <div class="blog-title">Cara Beli Emas Preloved dengan Selamat — Panduan Lengkap 2026</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/emas-preloved-selamat-ke" class="blog-card comp-low" data-cat="Keselamatan" data-kw="emas preloved selamat ke">
+        <span class="blog-tag">Keselamatan</span>
+        <div class="blog-title">Adakah Emas Preloved Selamat Dibeli? Jawapan Jujur + Tips Elak Tipu</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/beza-emas-preloved-dan-baru" class="blog-card comp-low" data-cat="Perbandingan" data-kw="beza emas preloved dan baru">
+        <span class="blog-tag">Perbandingan</span>
+        <div class="blog-title">Beza Emas Preloved dan Emas Baru — 5 Perkara yang Perlu Tahu</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/cara-jual-emas-terpakai" class="blog-card comp-low" data-cat="Panduan Jual" data-kw="cara jual emas terpakai">
+        <span class="blog-tag">Panduan Jual</span>
+        <div class="blog-title">Cara Jual Emas Terpakai di Malaysia — Proses Mudah & Harga Terbaik</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/harga-emas-preloved-916-hari-ini" class="blog-card comp-med" data-cat="Harga" data-kw="harga emas preloved 916 hari ini">
+        <span class="blog-tag">Harga</span>
+        <div class="blog-title">Harga Emas Preloved 916 Hari Ini — Bandingkan Kadar Terkini</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/kenapa-beli-emas-preloved" class="blog-card comp-low" data-cat="Panduan Beli" data-kw="kenapa beli emas preloved">
+        <span class="blog-tag">Panduan Beli</span>
+        <div class="blog-title">7 Sebab Kenapa Beli Emas Preloved Lebih Bijak daripada Beli Baru</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/emas-terpakai-boleh-dipercayai" class="blog-card comp-low" data-cat="Keselamatan" data-kw="emas terpakai boleh dipercayai">
+        <span class="blog-tag">Keselamatan</span>
+        <div class="blog-title">Bolehkah Emas Terpakai Dipercayai? Semua yang Perlu Anda Tahu</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/cara-simpan-emas" class="blog-card comp-med" data-cat="Panduan Beli" data-kw="cara simpan emas">
+        <span class="blog-tag">Panduan Beli</span>
+        <div class="blog-title">Cara Simpan Emas di Malaysia — 4 Kaedah Terbaik untuk Perlindungan Nilai</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/emas-vs-arrahnu" class="blog-card comp-low" data-cat="Perbandingan" data-kw="emas vs arrahnu">
+        <span class="blog-tag">Perbandingan</span>
+        <div class="blog-title">Emas Sendiri vs Ar-Rahnu — Mana Lebih Menguntungkan?</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/zakat-emas-2026" class="blog-card comp-low" data-cat="Agama" data-kw="zakat emas 2026">
+        <span class="blog-tag">Agama</span>
+        <div class="blog-title">Kira Zakat Emas 2026 — Nisab, Kadar & Cara Pengiraan Mudah</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/emas-preloved-berbaloi-ke" class="blog-card comp-low" data-cat="Analisis" data-kw="emas preloved berbaloi ke">
+        <span class="blog-tag">Analisis</span>
+        <div class="blog-title">Emas Preloved — Berbaloi Beli atau Tak? Analisis Jujur 2026</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/bila-masa-terbaik-beli-emas" class="blog-card comp-low" data-cat="Harga" data-kw="bila masa terbaik beli emas">
+        <span class="blog-tag">Harga</span>
+        <div class="blog-title">Bila Masa Terbaik Beli Emas di Malaysia? (Analisis Harga 2023-2026)</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/emas-916-vs-999" class="blog-card comp-med" data-cat="Perbandingan" data-kw="emas 916 vs 999">
+        <span class="blog-tag">Perbandingan</span>
+        <div class="blog-title">Emas 916 vs 999 — Mana Lebih Bagus untuk Simpan & Pakai?</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/emas-vs-crypto" class="blog-card comp-med" data-cat="Perbandingan" data-kw="emas vs crypto malaysia">
+        <span class="blog-tag">Perbandingan</span>
+        <div class="blog-title">Emas vs Crypto di Malaysia 2026 — Mana Lebih Selamat untuk Simpanan?</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/cara-cek-ketulenan-emas" class="blog-card comp-low" data-cat="Panduan Beli" data-kw="cara cek ketulenan emas">
+        <span class="blog-tag">Panduan Beli</span>
+        <div class="blog-title">Cara Cek Ketulenan Emas — 5 Kaedah XRF, Asid & Ujian Mudah</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/emas-preloved-kena-tipu" class="blog-card comp-low" data-cat="Keselamatan" data-kw="emas preloved kena tipu">
+        <span class="blog-tag">Keselamatan</span>
+        <div class="blog-title">Jangan Kena Tipu Beli Emas Preloved — 8 Tanda Merah yang Wajib Tahu</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/harga-emas-turun-apa-perlu-buat" class="blog-card comp-med" data-cat="Harga" data-kw="harga emas turun">
+        <span class="blog-tag">Harga</span>
+        <div class="blog-title">Kenapa Harga Emas Turun & Apa yang Perlu Buat? Panduan 2026</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/emas-simpanan-anak" class="blog-card comp-low" data-cat="Keluarga" data-kw="emas simpanan anak">
+        <span class="blog-tag">Keluarga</span>
+        <div class="blog-title">Emas sebagai Simpanan Anak — Panduan Ibu Bapa Malaysia 2026</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/gold-bar-vs-barang-kemas" class="blog-card comp-low" data-cat="Perbandingan" data-kw="gold bar vs barang kemas">
+        <span class="blog-tag">Perbandingan</span>
+        <div class="blog-title">Gold Bar vs Barang Kemas — Mana Lebih Baik untuk Simpanan?</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/cara-semak-kontrak-trade-in-emas-sebelum-serah" class="blog-card comp-low" data-cat="Keselamatan" data-kw="trade in emas kontrak">
+        <span class="blog-tag">Keselamatan</span>
+        <div class="blog-title">Cara Semak Kontrak Trade-In Emas Sebelum Serah Emas Lama</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/komisen-sspc-affiliate-kess-sebulan" class="blog-card comp-low" data-cat="Analisis" data-kw="komisen affiliate emas">
+        <span class="blog-tag">Analisis</span>
+        <div class="blog-title">Cara Nilai Komisen Affiliate Emas Bergram — Soalan Wajib Tanya</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <a href="/blog/wariskan-emas-sti-e-gold-kess-kepada-anak" class="blog-card comp-low" data-cat="Agama" data-kw="wariskan emas anak faraid">
+        <span class="blog-tag">Agama</span>
+        <div class="blog-title">Bagaimana Pewarisan Emas Berfungsi di Malaysia — Faraid, Wasiat & Hibah</div>
+        <div class="blog-footer"><span class="blog-read">Baca →</span></div>
+      </a>
+      <div class="no-results hidden" id="noResults"><div style="font-size:32px">🔍</div><p>Tiada artikel sepadan. Cuba carian lain.</p></div>
+  </div>
 </div>
 
 <section class="cta-strip">
   <h2>Dah tahu semua? Semak koleksi sekarang.</h2>
   <p>Beli emas preloved tulen tanpa upah, atau jual emas lama Puan dengan harga FGJAM.</p>
-  <a href="https://www.emassrisemantan.com/ref/alpianali" class="cta-big" target="_blank">Semak Koleksi Emas Preloved →</a>
+  <a href="https://www.emassrisemantan.com/ref/alpianali" class="cta-big" target="_blank" rel="noopener nofollow sponsored">Semak Koleksi Emas Preloved →</a>
 </section>
 
 <footer>
@@ -151,88 +247,45 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
     <a href="/#cawangan">Cawangan</a>
     <a href="/#faq">FAQ</a>
     <a href="/pendedahan-affiliate">Pendedahan Affiliate</a>
-    <a href="https://www.emassrisemantan.com/ref/alpianali" target="_blank">Semak Koleksi</a>
+    <a href="https://www.facebook.com/profile.php?id=61591412310681" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.emassrisemantan.com/ref/alpianali" target="_blank" rel="noopener nofollow sponsored">Semak Koleksi</a>
   </div>
 </footer>
 
 <script>
-const posts = [
-  {tag:"Perbandingan",  title:"Emas Preloved vs Emas Baru — Mana Lebih Untung untuk Simpanan?",                    vol:"1,800", comp:"LOW", kw:"emas preloved vs emas baru",              url:"/blog/emas-preloved-vs-baru"},
-  {tag:"Panduan Beli",  title:"Cara Beli Emas Preloved dengan Selamat — Panduan Lengkap 2026",                     vol:"2,100", comp:"LOW", kw:"cara beli emas preloved",                   url:"/blog/cara-beli-emas-preloved"},
-  {tag:"Keselamatan",   title:"Adakah Emas Preloved Selamat Dibeli? Jawapan Jujur + Tips Elak Tipu",               vol:"980",   comp:"LOW", kw:"emas preloved selamat ke",                  url:"/blog/emas-preloved-selamat-ke"},
-  {tag:"Perbandingan",  title:"Beza Emas Preloved dan Emas Baru — 5 Perkara yang Perlu Tahu",                      vol:"1,200", comp:"LOW", kw:"beza emas preloved dan baru",               url:"/blog/beza-emas-preloved-dan-baru"},
-  {tag:"Panduan Jual",  title:"Cara Jual Emas Terpakai di Malaysia — Proses Mudah & Harga Terbaik",                vol:"3,400", comp:"LOW", kw:"cara jual emas terpakai",                   url:"/blog/cara-jual-emas-terpakai"},
-  {tag:"Harga",         title:"Harga Emas Preloved 916 Hari Ini — Bandingkan Kadar Terkini",                       vol:"2,600", comp:"MED", kw:"harga emas preloved 916 hari ini",          url:"/blog/harga-emas-preloved-916-hari-ini"},
-  {tag:"Panduan Beli",  title:"7 Sebab Kenapa Beli Emas Preloved Lebih Bijak daripada Beli Baru",                  vol:"890",   comp:"LOW", kw:"kenapa beli emas preloved",                  url:"/blog/kenapa-beli-emas-preloved"},
-  {tag:"Keselamatan",   title:"Bolehkah Emas Terpakai Dipercayai? Semua yang Perlu Anda Tahu",                     vol:"720",   comp:"LOW", kw:"emas terpakai boleh dipercayai",             url:"/blog/emas-terpakai-boleh-dipercayai"},
-  {tag:"Panduan Beli",  title:"Cara Simpan Emas di Malaysia — 4 Kaedah Terbaik untuk Perlindungan Nilai",          vol:"8,900", comp:"MED", kw:"cara simpan emas",                          url:"/blog/cara-simpan-emas"},
-  {tag:"Perbandingan",  title:"Emas Sendiri vs Ar-Rahnu — Mana Lebih Menguntungkan?",                              vol:"2,100", comp:"LOW", kw:"emas vs arrahnu",                           url:"/blog/emas-vs-arrahnu"},
-  {tag:"Agama",         title:"Kira Zakat Emas 2026 — Nisab, Kadar & Cara Pengiraan Mudah",                        vol:"3,800", comp:"LOW", kw:"zakat emas 2026",                           url:"/blog/zakat-emas-2026"},
-  {tag:"Analisis",      title:"Emas Preloved — Berbaloi Beli atau Tak? Analisis Jujur 2026",                       vol:"780",   comp:"LOW", kw:"emas preloved berbaloi ke",                  url:"/blog/emas-preloved-berbaloi-ke"},
-  {tag:"Harga",         title:"Bila Masa Terbaik Beli Emas di Malaysia? (Analisis Harga 2023-2026)",                vol:"4,200", comp:"LOW", kw:"bila masa terbaik beli emas",               url:"/blog/bila-masa-terbaik-beli-emas"},
-  {tag:"Perbandingan",  title:"Emas 916 vs 999 — Mana Lebih Bagus untuk Simpan & Pakai?",                         vol:"5,600", comp:"MED", kw:"emas 916 vs 999",                           url:"/blog/emas-916-vs-999"},
-  {tag:"Perbandingan",  title:"Emas vs Crypto di Malaysia 2026 — Mana Lebih Selamat untuk Simpanan?",              vol:"2,800", comp:"MED", kw:"emas vs crypto malaysia",                   url:"/blog/emas-vs-crypto"},
-  {tag:"Panduan Beli",  title:"Cara Cek Ketulenan Emas — 5 Kaedah XRF, Asid & Ujian Mudah",                       vol:"6,700", comp:"LOW", kw:"cara cek ketulenan emas",                   url:"/blog/cara-cek-ketulenan-emas"},
-  {tag:"Keselamatan",   title:"Jangan Kena Tipu Beli Emas Preloved — 8 Tanda Merah yang Wajib Tahu",               vol:"540",   comp:"LOW", kw:"emas preloved kena tipu",                   url:"/blog/emas-preloved-kena-tipu"},
-  {tag:"Harga",         title:"Kenapa Harga Emas Turun & Apa yang Perlu Buat? Panduan 2026",                       vol:"9,200", comp:"MED", kw:"harga emas turun",                          url:"/blog/harga-emas-turun-apa-perlu-buat"},
-  {tag:"Keluarga",      title:"Emas sebagai Simpanan Anak — Panduan Ibu Bapa Malaysia 2026",                       vol:"3,100", comp:"LOW", kw:"emas simpanan anak",                        url:"/blog/emas-simpanan-anak"},
-  {tag:"Perbandingan",  title:"Gold Bar vs Barang Kemas — Mana Lebih Baik untuk Simpanan?",                        vol:"1,800", comp:"LOW", kw:"gold bar vs barang kemas",                  url:"/blog/gold-bar-vs-barang-kemas"},
-  {tag:"Keselamatan",   title:"Cara Semak Kontrak Trade-In Emas Sebelum Serah Emas Lama",                         vol:"1,400", comp:"LOW", kw:"trade in emas kontrak",                     url:"/blog/cara-semak-kontrak-trade-in-emas-sebelum-serah"},
-  {tag:"Analisis",      title:"Cara Nilai Komisen Affiliate Emas Bergram — Soalan Wajib Tanya",                    vol:"460",   comp:"LOW", kw:"komisen affiliate emas",                    url:"/blog/komisen-sspc-affiliate-kess-sebulan"},
-  {tag:"Agama",         title:"Bagaimana Pewarisan Emas Berfungsi di Malaysia — Faraid, Wasiat & Hibah",            vol:"310",   comp:"LOW", kw:"wariskan emas anak faraid",                 url:"/blog/wariskan-emas-sti-e-gold-kess-kepada-anak"},
-];
-
-let activeFilter = 'Semua';
-let searchTerm = '';
-
-function setFilter(cat, btn) {
-  activeFilter = cat;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderGrid();
-}
-
-function filterPosts() {
-  searchTerm = document.getElementById('searchInput').value.toLowerCase();
-  renderGrid();
-}
-
-function renderGrid() {
-  const grid = document.getElementById('blogGrid');
-  const countEl = document.getElementById('blogCount');
-  grid.innerHTML = '';
-
-  const filtered = posts.filter(p => {
-    const matchCat = activeFilter === 'Semua' || p.tag === activeFilter;
-    const matchSearch = !searchTerm ||
-      p.title.toLowerCase().includes(searchTerm) ||
-      p.kw.toLowerCase().includes(searchTerm) ||
-      p.tag.toLowerCase().includes(searchTerm);
-    return matchCat && matchSearch;
-  });
-
-  countEl.innerHTML = `Menunjukkan <span>${filtered.length}</span> daripada ${posts.length} artikel`;
-
-  if (filtered.length === 0) {
-    grid.innerHTML = '<div class="no-results"><div style="font-size:32px">🔍</div><p>Tiada artikel sepadan. Cuba carian lain.</p></div>';
-    return;
+(function(){
+  var activeFilter="Semua", searchTerm="";
+  var cards=Array.prototype.slice.call(document.querySelectorAll(".blog-card"));
+  var countEl=document.getElementById("blogCount");
+  var noResults=document.getElementById("noResults");
+  var total=cards.length;
+  function apply(){
+    var shown=0;
+    cards.forEach(function(card){
+      var cat=card.getAttribute("data-cat")||"";
+      var kw=(card.getAttribute("data-kw")||"").toLowerCase();
+      var t=card.querySelector(".blog-title");
+      var title=(t?t.textContent:"").toLowerCase();
+      var matchCat=activeFilter==="Semua"||cat===activeFilter;
+      var matchSearch=!searchTerm||title.indexOf(searchTerm)>-1||kw.indexOf(searchTerm)>-1||cat.toLowerCase().indexOf(searchTerm)>-1;
+      var show=matchCat&&matchSearch;
+      card.classList.toggle("hidden",!show);
+      if(show)shown++;
+    });
+    countEl.innerHTML='Menunjukkan <span>'+shown+'</span> daripada '+total+' artikel';
+    noResults.classList.toggle("hidden",shown!==0);
   }
-
-  filtered.forEach(p => {
-    const card = document.createElement('a');
-    card.className = 'blog-card comp-' + p.comp.toLowerCase();
-    card.href = p.url;
-    card.innerHTML = `
-      <span class="blog-tag">${p.tag}</span>
-      <div class="blog-title">${p.title}</div>
-      <div class="blog-footer">
-        <span class="blog-read">Baca →</span>
-      </div>`;
-    grid.appendChild(card);
+  document.querySelectorAll(".filter-btn").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      activeFilter=btn.getAttribute("data-cat");
+      document.querySelectorAll(".filter-btn").forEach(function(b){b.classList.remove("active");});
+      btn.classList.add("active");
+      apply();
+    });
   });
-}
-
-renderGrid();
+  var si=document.getElementById("searchInput");
+  si.addEventListener("input",function(){searchTerm=si.value.toLowerCase();apply();});
+})();
 </script>
 </body>
 </html>
