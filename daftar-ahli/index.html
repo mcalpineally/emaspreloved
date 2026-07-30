@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daftar Ahli: Link Affiliate Anda Tampil Rawak di Emas Preloved Malaysia</title>
+<meta name="description" content="Jadi ahli berdaftar KESS. Hantar link referral anda dan ia akan digilir secara rawak pada butang pendaftaran KESS di halaman ahli ini. Setiap pelawat yang klik berpeluang mendaftar di bawah link anda. Trafik percuma untuk ahli." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9963A;--gold2:#E8C97A;--gold-pale:#FBF5E6;
+  --dark:#1A1208;--dark2:#2E1F05;--ink:#2C1F0A;--muted:#7A6545;
+  --border:#E8D9B8;--white:#FFFDF7;--r:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);font-size:15px;line-height:1.7;overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,253,247,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.nav-inner{max-width:940px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--dark);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{font-size:13px;font-weight:500;background:var(--gold);color:#fff;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:var(--dark2)}
+
+.hero{max-width:940px;margin:0 auto;padding:3.5rem 1.5rem 2.5rem;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);border:1px solid var(--border);border-radius:20px;padding:4px 12px;margin-bottom:1.25rem}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5vw,44px);font-weight:700;line-height:1.15;color:var(--dark);margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:1.75rem}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:#fff;border:none;border-radius:8px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
+.btn-primary:hover{background:var(--dark2)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--border);border-radius:8px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
+.btn-ghost:hover{background:var(--gold-pale)}
+
+/* rotation demo card */
+.rot-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem;box-shadow:0 4px 24px rgba(201,150,58,.10)}
+.rot-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.rot-title{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rot-live{font-size:10px;color:var(--gold);background:var(--gold-pale);padding:2px 8px;border-radius:20px;font-weight:500}
+.rot-slot{background:var(--gold-pale);border:1px dashed var(--gold);border-radius:10px;padding:14px;text-align:center}
+.rot-slot .lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.rot-slot .link{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--dark);word-break:break-all;line-height:1.2}
+.rot-slot .link span{color:var(--gold)}
+.rot-note{font-size:11px;color:var(--muted);margin-top:10px;text-align:center;line-height:1.6}
+.rot-count{font-size:11px;color:var(--muted);margin-top:8px;text-align:center}
+.rot-count b{color:var(--gold)}
+
+/* how it works */
+.cara{background:var(--gold-pale);padding:3rem 1.5rem}
+.cara-inner{max-width:940px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.cara h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,34px);font-weight:700;color:var(--dark);margin-bottom:1.75rem;line-height:1.2}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1.25rem;text-align:center}
+.step-num{width:36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;margin:0 auto 12px}
+.step h4{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:6px}
+.step p{font-size:12px;color:var(--muted);line-height:1.7}
+
+/* benefits */
+.kel{max-width:940px;margin:0 auto;padding:3rem 1.5rem}
+.section-hdr{text-align:center;margin-bottom:2rem}
+.section-hdr h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,34px);font-weight:700;color:var(--dark);margin-bottom:6px}
+.section-hdr p{font-size:13px;color:var(--muted)}
+.kel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kel-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;transition:border-color .2s}
+.kel-card:hover{border-color:var(--gold)}
+.kel-icon{width:40px;height:40px;border-radius:50%;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:18px}
+.kel-card h3{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:4px}
+.kel-card p{font-size:12px;color:var(--muted);line-height:1.7}
+
+/* after register (KESS steps) */
+.after{background:var(--dark);padding:3rem 1.5rem}
+.after-inner{max-width:940px;margin:0 auto}
+.after h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:#fff;margin-bottom:.4rem}
+.after .lead{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:1.75rem}
+.after-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.after-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.25rem}
+.after-card .n{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold2);font-weight:700;margin-bottom:6px}
+.after-card h3{font-size:13px;font-weight:500;color:#fff;margin-bottom:6px}
+.after-card p{font-size:12px;color:rgba(255,255,255,.55);line-height:1.7}
+.after-card .tag{display:inline-block;font-size:10px;font-weight:500;color:var(--gold2);background:rgba(232,201,122,.12);border:1px solid rgba(232,201,122,.3);border-radius:20px;padding:2px 9px;margin-top:8px}
+.opts-line{margin-top:14px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.9}
+.opts-line b{color:#fff;font-weight:500}
+
+/* email submit box */
+.submit{max-width:940px;margin:0 auto;padding:3rem 1.5rem}
+.submit-box{background:linear-gradient(135deg,var(--gold) 0%,#9a6910 100%);border-radius:16px;padding:2.25rem 1.75rem;text-align:center;color:#fff}
+.submit-box .eyebrow{color:rgba(255,255,255,.75);margin-bottom:.5rem}
+.submit-box h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,32px);font-weight:700;color:#fff;margin-bottom:.6rem}
+.submit-box p{font-size:13.5px;color:rgba(255,255,255,.9);max-width:480px;margin:0 auto 1.25rem;line-height:1.8}
+.submit-mail{display:inline-block;background:#fff;color:var(--dark2);font-size:14px;font-weight:500;text-decoration:none;padding:13px 26px;border-radius:8px;transition:transform .2s}
+.submit-mail:hover{transform:translateY(-1px)}
+.submit-fmt{margin-top:1.25rem;background:rgba(0,0,0,.15);border-radius:10px;padding:12px 16px;font-size:12px;text-align:left;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.9}
+.submit-fmt code{color:var(--gold2);font-family:'Inter',sans-serif}
+
+/* faq */
+.faq{max-width:940px;margin:0 auto;padding:3rem 1.5rem}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;background:#fff;overflow:hidden}
+.faq-item.open{border-color:var(--gold)}
+.faq-btn{width:100%;background:none;border:none;text-align:left;padding:.9rem 1.1rem;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink)}
+.faq-btn:hover{background:var(--gold-pale)}
+.faq-chevron{flex-shrink:0;width:18px;height:18px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);transition:transform .25s,background .2s;margin-top:1px}
+.faq-item.open .faq-chevron{background:var(--gold);border-color:var(--gold);color:#fff;transform:rotate(45deg)}
+.faq-ans{display:none;padding:0 1.1rem .9rem 1.1rem;font-size:13px;color:var(--muted);line-height:1.85}
+.faq-item.open .faq-ans{display:block}
+.faq-ans strong{color:var(--ink)}
+
+/* cta strip */
+.cta-strip{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);padding:3.5rem 1.5rem;text-align:center}
+.cta-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;margin-bottom:.75rem}
+.cta-strip h2 em{font-style:italic;color:var(--gold2)}
+.cta-strip p{font-size:13px;color:rgba(255,255,255,.6);max-width:460px;margin:0 auto 2rem}
+.cta-big{background:var(--gold);color:#fff;border:none;border-radius:8px;padding:14px 32px;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
+.cta-big:hover{background:#a87520}
+
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding:1.75rem 1.5rem;text-align:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px}
+.footer-logo span{color:var(--gold2)}
+.footer-disc{font-size:11px;color:rgba(255,255,255,.28);max-width:500px;margin:0 auto .75rem;line-height:1.7}
+.footer-disc a{color:rgba(255,255,255,.5)}
+.footer-links{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
+.footer-links a{font-size:11px;color:rgba(255,255,255,.35);text-decoration:none}
+.footer-links a:hover{color:var(--gold2)}
+.divider{max-width:940px;margin:0 auto;height:1px;background:var(--border)}
+
+@media(max-width:700px){
+  .hero{grid-template-columns:1fr;padding:2rem 1.25rem 1.5rem}
+  .rot-card{order:-1}
+  .steps{grid-template-columns:1fr}
+  .kel-grid{grid-template-columns:1fr 1fr}
+  .after-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Emas Preloved <span>◆</span></a>
+    <ul class="nav-links">
+      <li><a href="/#harga">Harga</a></li>
+      <li><a href="/#koleksi">Koleksi</a></li>
+      <li><a href="/#cawangan">Cawangan</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/daftar-ahli/">Jadi Ahli</a></li>
+    </ul>
+    <a href="#cara" class="nav-cta">Daftar Ahli →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-badge">Program Ahli · Emas Preloved Malaysia</div>
+    <h1>Daftar ahli KESS.<br>Link affiliate anda <em>tampil rawak</em> di laman ini.</h1>
+    <p class="hero-desc">emaspreloved.com dilawati pencinta emas setiap hari. Sebagai ahli berdaftar, anda hantar link referral KESS anda kepada kami, dan ia akan digilir secara <strong>rawak</strong> pada butang pendaftaran KESS di halaman ini. Setiap pelawat yang klik berpeluang mendaftar di bawah link anda. Trafik percuma, tanpa kos iklan.</p>
+    <div class="hero-btns">
+      <a href="https://www.emassrisemantan.com/ref/alpianali" data-aff class="btn-primary" target="_blank" rel="noopener nofollow sponsored">Daftar Akaun KESS →</a>
+      <a href="#hantar" class="btn-ghost">Saya Ahli, Hantar Link</a>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-top:10px"><a href="#cara" style="color:var(--gold);text-decoration:none">↓ Lihat cara program ini berfungsi</a></p>
+  </div>
+
+  <div>
+    <div class="rot-card">
+      <div class="rot-head">
+        <span class="rot-title">Link Dipaparkan Sekarang</span>
+        <span class="rot-live" id="rotLive">● Rawak</span>
+      </div>
+      <div class="rot-slot">
+        <div class="lbl">Pelawat sekarang akan ke</div>
+        <div class="link" id="rotLink">/ref/<span>…</span></div>
+      </div>
+      <p class="rot-note">Setiap kali laman ini dimuat, satu link ahli dipilih secara rawak. Muat semula halaman untuk lihat ia bertukar.</p>
+      <p class="rot-count" id="rotCount"></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="cara" id="cara">
+  <div class="cara-inner">
+    <div class="eyebrow">Macam Mana Ia Berfungsi</div>
+    <h2>Tiga langkah untuk link anda mula terima klik</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Daftar &amp; Upgrade Akaun KESS</h4>
+        <p>Daftar sebagai ahli dan buat upgrade untuk dapat <strong>link referral atas nama sendiri</strong>.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Email Link Referral Anda</h4>
+        <p>Hantar link referral KESS anda kepada kami melalui email. Sekali sahaja, kami uruskan selebihnya.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Link Anda Masuk Giliran Rawak</h4>
+        <p>Link anda ditambah ke putaran pada butang pendaftaran di halaman ini dan mula digilir secara adil kepada pelawat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="kel">
+  <div class="section-hdr">
+    <div class="eyebrow">Kenapa Ini Berbaloi</div>
+    <h2>Anda fokus daftar. Kami bawa pelawat.</h2>
+    <p>Laman yang sudah dioptimum untuk carian emas preloved, bekerja untuk semua ahli.</p>
+  </div>
+  <div class="kel-grid">
+    <div class="kel-card"><div class="kel-icon">🌐</div><h3>Trafik Percuma</h3><p>Anda tak perlu bina laman sendiri atau bayar iklan. Pelawat sedia ada dikongsi kepada ahli.</p></div>
+    <div class="kel-card"><div class="kel-icon">🎲</div><h3>Giliran Adil &amp; Rawak</h3><p>Setiap link ahli dipilih secara rawak. Tiada siapa dapat keutamaan, peluang sama rata.</p></div>
+    <div class="kel-card"><div class="kel-icon">🔍</div><h3>Sudah Dioptimum SEO</h3><p>Harga emas live, 17 cawangan, panduan lengkap, laman ini dibina untuk muncul dalam carian Google.</p></div>
+    <div class="kel-card"><div class="kel-icon">🔗</div><h3>Guna Link KESS Rasmi</h3><p>Semua link menuju ke pendaftaran rasmi KESS. Telus dan sah. Cuma kredit referral berbeza ikut ahli.</p></div>
+    <div class="kel-card"><div class="kel-icon">✏️</div><h3>Boleh Kemas Kini</h3><p>Tukar atau kemas kini link anda bila-bila masa. Hantar semula email, kami ganti.</p></div>
+    <div class="kel-card"><div class="kel-icon">💛</div><h3>Percuma untuk Ahli</h3><p>Tiada yuran penyertaan. Cukup jadi ahli berdaftar dan hantar link anda.</p></div>
+  </div>
+</section>
+
+<!-- AFTER REGISTER -->
+<section class="after">
+  <div class="after-inner">
+    <div class="eyebrow" style="color:var(--gold2)">Selepas Anda Daftar</div>
+    <h2>Langkah jadi ahli aktif KESS</h2>
+    <p class="lead">Selain hantar link, ini yang perlu anda buat untuk akaun kekal aktif.</p>
+    <div class="after-grid">
+      <div class="after-card">
+        <div class="n">01</div>
+        <h3>Upgrade Akaun</h3>
+        <p>Buka semua fungsi sistem &amp; dapat link referral atas nama sendiri.</p>
+      </div>
+      <div class="after-card">
+        <div class="n">02</div>
+        <h3>Sertai Group Rasmi</h3>
+        <p>Dibimbing langkah demi langkah, dapat update harga emas, promosi &amp; latihan.</p>
+      </div>
+      <div class="after-card">
+        <div class="n">03</div>
+        <h3>Aktifkan Akaun</h3>
+        <p>Buat key-in activation untuk kekalkan akaun aktif &amp; nikmati semua manfaat ahli.</p>
+        <span class="tag">Dalam 33 hari</span>
+      </div>
+    </div>
+    <p class="opts-line">Pilihan pengaktifan: <b>Special Trade In (STI)</b>: tukar emas lama, min 0.1g · <b>Gold Saving</b>: simpan ikut kemampuan · <b>Bina rangkaian</b>: kongsi link referral · <b>Beli emas</b> di mana-mana cawangan KESS. Pilih satu, pihak kami bantu key-in.</p>
+  </div>
+</section>
+
+<!-- EMAIL SUBMIT -->
+<section class="submit" id="hantar">
+  <div class="submit-box">
+    <div class="eyebrow">Langkah Penting</div>
+    <h2>Hantar link referral anda</h2>
+    <p>Sudah daftar &amp; upgrade? Emailkan link referral KESS anda kepada kami. Sebaik ditambah, link anda mula digilir pada butang pendaftaran KESS di halaman ini.</p>
+    <a class="submit-mail" href="mailto:rabiah78@gmail.com?subject=LINK%20AHLI%20KESS&body=Nama%3A%20%0ANo.%20WhatsApp%3A%20%0AEmel%3A%20%0ANama%20upline%3A%20%0ALink%20referral%20KESS%3A%20https%3A%2F%2Fwww.emassrisemantan.com%2Fref%2F">✉️ Email Link Saya Sekarang</a>
+    <div class="submit-fmt">
+      Sertakan dalam email anda:<br>
+      <code>Nama:</code> nama penuh anda<br>
+      <code>No. WhatsApp:</code> untuk kami hubungi<br>
+      <code>Emel:</code> alamat emel anda<br>
+      <code>Nama upline:</code> nama upline anda<br>
+      <code>Link referral KESS:</code> https://www.emassrisemantan.com/ref/<b>namaanda</b>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-hdr">
+    <div class="eyebrow" style="margin-bottom:.4rem">Soalan Lazim</div>
+    <h2>Soalan tentang program ahli</h2>
+  </div>
+  <div id="faqlist">
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Macam mana link saya dipilih untuk dipaparkan?</span><span class="faq-chevron">+</span></button>
+      <div class="faq-ans">Setiap kali seseorang membuka halaman pendaftaran ahli ini, sistem pilih <strong>satu link ahli secara rawak</strong> dari senarai dan gunakannya pada butang pendaftaran KESS di halaman ini. Muat semula = pilihan baru. Semua ahli dapat peluang giliran yang sama rata.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Perlu bayar untuk sertai program ini?</span><span class="faq-chevron">+</span></button>
+      <div class="faq-ans">Tidak. Program ini <strong>percuma</strong> untuk ahli KESS yang berdaftar. Anda hanya perlu daftar, upgrade akaun, dan hantar link referral anda.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Bila link saya mula muncul di laman?</span><span class="faq-chevron">+</span></button>
+      <div class="faq-ans">Sebaik sahaja kami terima email anda dan tambah link ke dalam senarai putaran. Kami akan maklumkan bila ia sudah aktif.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Boleh tukar atau kemas kini link saya?</span><span class="faq-chevron">+</span></button>
+      <div class="faq-ans">Boleh, bila-bila masa. Email semula link baharu anda dan kami akan gantikan yang lama dalam putaran.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Selamat ke? Link saya menuju ke mana?</span><span class="faq-chevron">+</span></button>
+      <div class="faq-ans">Selamat. Semua link menuju ke <strong>pendaftaran rasmi KESS</strong> (emassrisemantan.com). Ia link referral awam. Yang berbeza hanya siapa mendapat kredit rujukan apabila pelawat mendaftar.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Adakah dijamin saya akan dapat pendaftaran?</span><span class="faq-chevron">+</span></button>
+      <div class="faq-ans">Tidak dijamin. Program ini memberi anda <strong>peluang</strong> untuk link anda dilihat &amp; diklik pelawat, bukan jaminan pendaftaran. Semakin ramai ahli, semakin kecil giliran setiap orang, tetapi trafik keseluruhan juga berkembang.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <h2>Jadi ahli hari ini.<br><em>Biar laman ini bekerja untuk anda.</em></h2>
+  <p>Belum daftar KESS? Mula sekarang. Sudah jadi ahli? Hantar link referral anda dan ia mula digilir pada butang pendaftaran di halaman ini secara percuma.</p>
+  <a href="https://www.emassrisemantan.com/ref/alpianali" data-aff class="cta-big" target="_blank" rel="noopener nofollow sponsored">Daftar Akaun KESS →</a>
+  <p style="margin:1rem 0 0"><a href="#hantar" style="color:var(--gold2);font-size:13px;text-decoration:none">Saya sudah jadi ahli, hantar link saya →</a></p>
+</section>
+
+<footer>
+  <div class="footer-logo">Emas Preloved Malaysia <span>◆</span></div>
+  <p class="footer-disc">Laman ini diuruskan oleh ejen sah bagi tujuan promosi dan maklumat. Butang pendaftaran menggunakan link referral ahli berdaftar yang digilir secara rawak. Harga emas berdasarkan indeks FGJAM dan boleh berubah setiap hari. Lihat <a href="/pendedahan-affiliate">pendedahan affiliate</a> kami.</p>
+  <div class="footer-links">
+    <a href="/">Utama</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#cawangan">Cawangan</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/daftar-ahli/">Jadi Ahli</a>
+    <a href="/pendedahan-affiliate">Pendedahan Affiliate</a>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   PUTARAN LINK AHLI (affiliate link rotator)
+   ------------------------------------------------------------
+   Tambah link ahli baharu di bawah, satu baris satu link.
+   Butang bertanda data-aff akan mengambil SATU link rawak
+   setiap kali halaman dimuat.
+   ============================================================ */
+const AFF_LINKS = [
+  "https://www.emassrisemantan.com/ref/alpianali",
+  // "https://www.emassrisemantan.com/ref/namaahli2",
+  // "https://www.emassrisemantan.com/ref/namaahli3",
+];
+
+(function(){
+  var pick = AFF_LINKS[Math.floor(Math.random() * AFF_LINKS.length)];
+
+  // Pasang link rawak pada semua butang [data-aff]
+  document.querySelectorAll('[data-aff]').forEach(function(a){ a.setAttribute('href', pick); });
+
+  // Papar handle link dalam kad demo hero
+  var handle = pick.split('/ref/')[1] || '';
+  var linkEl = document.getElementById('rotLink');
+  if (linkEl) linkEl.innerHTML = '/ref/<span>' + handle + '</span>';
+  var countEl = document.getElementById('rotCount');
+  if (countEl) countEl.innerHTML = '<b>' + AFF_LINKS.length + '</b> ahli dalam putaran hari ini';
+})();
+
+/* FAQ accordion */
+document.querySelectorAll('.faq-item .faq-btn').forEach(function(btn, i){
+  btn.addEventListener('click', function(){
+    var items = document.querySelectorAll('.faq-item');
+    var isOpen = items[i].classList.contains('open');
+    items.forEach(function(el){ el.classList.remove('open'); });
+    if (!isOpen) items[i].classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
