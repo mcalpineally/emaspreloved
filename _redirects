@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects
+# Format: /source /destination status
+
+# Trailing slash canonicals — consolidate ranking signals to slash versions
+/blog/zakat-emas-2026  /blog/zakat-emas-2026/  301
+/blog/emas-vs-arrahnu  /blog/emas-vs-arrahnu/  301
+/blog/gold-bar-vs-barang-kemas  /blog/gold-bar-vs-barang-kemas/  301
+/blog/emas-preloved-kena-tipu  /blog/emas-preloved-kena-tipu/  301
