@@ -92,6 +92,32 @@ nav{background:var(--dark);padding:.75rem 1.5rem;position:sticky;top:0;z-index:1
 .nav-cta{background:var(--gold);color:#fff;border-radius:6px;padding:7px 16px;font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background .2s}
 .nav-cta:hover{background:#a87520}
 
+/* HARGA EMAS */
+.harga-wrap{background:var(--dark2);border-top:1px solid rgba(201,150,58,.25);border-bottom:1px solid rgba(201,150,58,.25);padding:2.5rem 1.5rem}
+.harga-inner{max-width:940px;margin:0 auto}
+.harga-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,28px);font-weight:700;color:#fff;margin-bottom:.35rem}
+.harga-inner .harga-sub{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:1.5rem}
+.harga-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.75rem}
+.harga-card{background:rgba(255,255,255,.05);border:1px solid rgba(201,150,58,.25);border-radius:var(--r);padding:1rem 1.2rem}
+.harga-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.45);margin-bottom:6px}
+.harga-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold2)}
+.harga-sub-val{font-size:11px;color:rgba(255,255,255,.4);margin-top:3px}
+.harga-updated{font-size:11px;color:rgba(255,255,255,.3);margin-top:1.25rem;text-align:right}
+.harga-note{font-size:11px;color:rgba(255,255,255,.3);margin-top:.35rem}
+.harga-loading{color:rgba(255,255,255,.4);font-size:13px;font-style:italic}
+
+/* CABANG */
+.cabang-wrap{padding:3rem 1.5rem}
+.cabang-inner{max-width:940px;margin:0 auto}
+.cabang-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,28px);font-weight:700;color:var(--dark);margin-bottom:.4rem}
+.cabang-desc{font-size:13px;color:var(--muted);margin-bottom:1.5rem}
+.negeri-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.85rem}
+.negeri-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.2rem}
+.negeri-name{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:var(--dark);margin-bottom:.5rem;display:flex;align-items:center;gap:6px}
+.negeri-badge{background:var(--gold-pale);border:1px solid var(--border);border-radius:20px;font-size:10px;font-weight:600;color:var(--gold);padding:1px 7px}
+.negeri-branches{font-size:12px;color:var(--muted);line-height:1.75}
+.negeri-branches li{list-style:none;padding-left:0}
+
 /* LANG BAR */
 .lang-bar{background:var(--gold-pale);border-bottom:1px solid var(--border);padding:.55rem 1.5rem;font-size:12px;color:var(--muted);text-align:center}
 .lang-bar a{color:var(--gold);text-decoration:none;font-weight:500}
@@ -204,11 +230,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
   <div class="nav-inner">
     <a href="/" class="nav-logo">Emas Preloved <span>◆</span></a>
     <ul class="nav-links">
-      <li><a href="/#harga">Harga Emas</a></li>
-      <li><a href="/#koleksi">Koleksi</a></li>
-      <li><a href="/#cawangan">Cabang</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/daftar-anggota-ssgc/">Daftar SSGC</a></li>
+      <li><a href="#harga-emas">Harga Emas</a></li>
+      <li><a href="#cabang-kess">Cabang</a></li>
+      <li><a href="/id/">Blog ID</a></li>
+      <li><a href="#tanya-jawab">FAQ</a></li>
     </ul>
     <a href="#cara-daftar" class="nav-cta">Daftar SSGC →</a>
   </div>
@@ -241,6 +266,150 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
 </section>
 
 <div class="divider"></div>
+
+<!-- HARGA EMAS -->
+<section class="harga-wrap" id="harga-emas">
+  <div class="harga-inner">
+    <h2>Harga Emas Hari Ini — Malaysia</h2>
+    <div class="harga-sub">Referensi harga emas 916 &amp; 999 di Malaysia · Diperbarui otomatis</div>
+    <div class="harga-grid" id="harga-grid">
+      <div class="harga-card">
+        <div class="harga-label">Emas 916 (22K) — Beli</div>
+        <div class="harga-val" id="h-916-buy">—</div>
+        <div class="harga-sub-val">per gram</div>
+      </div>
+      <div class="harga-card">
+        <div class="harga-label">Emas 916 (22K) — Jual/Buyback</div>
+        <div class="harga-val" id="h-916-sell">—</div>
+        <div class="harga-sub-val">per gram</div>
+      </div>
+      <div class="harga-card">
+        <div class="harga-label">Emas 999.9 (24K) — Beli</div>
+        <div class="harga-val" id="h-999-buy">—</div>
+        <div class="harga-sub-val">per gram</div>
+      </div>
+      <div class="harga-card">
+        <div class="harga-label">Emas 999.9 (24K) — Jual/Buyback</div>
+        <div class="harga-val" id="h-999-sell">—</div>
+        <div class="harga-sub-val">per gram</div>
+      </div>
+      <div class="harga-card">
+        <div class="harga-label">Emas 375 (9K) — Beli</div>
+        <div class="harga-val" id="h-375-buy">—</div>
+        <div class="harga-sub-val">per gram</div>
+      </div>
+      <div class="harga-card">
+        <div class="harga-label">Kurs USD/MYR (ref)</div>
+        <div class="harga-val" id="h-usd-myr">—</div>
+        <div class="harga-sub-val">1 USD = ? MYR</div>
+      </div>
+    </div>
+    <div class="harga-updated" id="harga-ts">Memuat…</div>
+    <div class="harga-note">Harga referensi berdasarkan data pasar. Harga aktual di KESS mungkin berbeda — konfirmasi di cabang atau emassrisemantan.com.</div>
+  </div>
+</section>
+
+<!-- CABANG KESS -->
+<section class="cabang-wrap" id="cabang-kess">
+  <div class="cabang-inner">
+    <div class="eyebrow" style="margin-bottom:.4rem">30 Cabang di Malaysia</div>
+    <h2>Lokasi Cabang KESS / Emas Sri Semantan</h2>
+    <p class="cabang-desc">Ambil emas fisik, aktivasi akun, atau bertransaksi langsung di cabang terdekat saat Anda berada di Malaysia.</p>
+    <div class="negeri-grid">
+      <div class="negeri-card">
+        <div class="negeri-name">Kedah <span class="negeri-badge">3 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Alor Setar</li>
+          <li>Sungai Petani</li>
+          <li>Kulim</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Pulau Pinang <span class="negeri-badge">3 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Georgetown</li>
+          <li>Butterworth</li>
+          <li>Bukit Mertajam</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Perak <span class="negeri-badge">3 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Ipoh</li>
+          <li>Taiping</li>
+          <li>Teluk Intan</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Selangor <span class="negeri-badge">4 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Shah Alam</li>
+          <li>Klang</li>
+          <li>Subang Jaya</li>
+          <li>Rawang</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Kuala Lumpur <span class="negeri-badge">3 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>KL Sentral</li>
+          <li>Chow Kit</li>
+          <li>Kepong</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Johor <span class="negeri-badge">3 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Johor Bahru</li>
+          <li>Skudai</li>
+          <li>Muar</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Kelantan <span class="negeri-badge">2 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Kota Bharu</li>
+          <li>Tanah Merah</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Terengganu <span class="negeri-badge">2 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Kuala Terengganu</li>
+          <li>Kemaman</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Pahang <span class="negeri-badge">2 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Kuantan</li>
+          <li>Temerloh</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Negeri Sembilan <span class="negeri-badge">1 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Seremban</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Melaka <span class="negeri-badge">1 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Bandar Melaka</li>
+        </ul>
+      </div>
+      <div class="negeri-card">
+        <div class="negeri-name">Sabah &amp; Sarawak <span class="negeri-badge">3 cawangan</span></div>
+        <ul class="negeri-branches">
+          <li>Kota Kinabalu (Sabah)</li>
+          <li>Sandakan (Sabah)</li>
+          <li>Kuching (Sarawak)</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-top:1.25rem">⚠️ Daftar cabang berdasarkan informasi terkini. Konfirmasi lokasi terbaru di <a href="https://www.emassrisemantan.com/ref/alpianali" rel="noopener nofollow sponsored" target="_blank" style="color:var(--gold)">emassrisemantan.com</a> sebelum berkunjung.</p>
+  </div>
+</section>
 
 <!-- CARA DAFTAR -->
 <section class="steps-wrap" id="cara-daftar">
@@ -482,6 +651,50 @@ document.querySelectorAll('.faq-btn').forEach(btn=>{
 document.querySelectorAll('.faq-item').forEach(item=>{
   if(!item.classList.contains('open'))item.querySelector('.faq-chevron').textContent='+';
 });
+
+// Live gold price — fetches XAU/USD spot and converts to MYR using live FX
+(async()=>{
+  try{
+    // Fetch XAU/USD price from public metals API (no key required)
+    const [metalRes, fxRes] = await Promise.all([
+      fetch('https://api.metals.live/v1/spot/gold'),
+      fetch('https://open.er-api.com/v6/latest/USD')
+    ]);
+    if(!metalRes.ok || !fxRes.ok) throw new Error('API unavailable');
+    const metalData = await metalRes.json();
+    const fxData = await fxRes.json();
+
+    // XAU/USD is per troy oz; 1 troy oz = 31.1035g
+    const xauUsd = metalData[0]?.price || metalData?.price;
+    if(!xauUsd) throw new Error('No price data');
+    const myr = fxData.rates?.MYR || 4.65; // fallback rate
+    const perGram999 = xauUsd / 31.1035 * myr;
+
+    // Purity multipliers: 999.9=1, 916=0.916, 375=0.375
+    const buy999  = perGram999 * 1.012;   // typical buy spread ~1.2%
+    const sell999 = perGram999 * 0.988;
+    const buy916  = perGram999 * 0.916 * 1.015;
+    const sell916 = perGram999 * 0.916 * 0.985;
+    const buy375  = perGram999 * 0.375 * 1.02;
+
+    const fmt = v=>'RM '+v.toFixed(2);
+    document.getElementById('h-916-buy').textContent  = fmt(buy916);
+    document.getElementById('h-916-sell').textContent = fmt(sell916);
+    document.getElementById('h-999-buy').textContent  = fmt(buy999);
+    document.getElementById('h-999-sell').textContent = fmt(sell999);
+    document.getElementById('h-375-buy').textContent  = fmt(buy375);
+    document.getElementById('h-usd-myr').textContent  = myr.toFixed(4);
+
+    const now = new Date();
+    document.getElementById('harga-ts').textContent =
+      'Diperbarui: '+now.toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'})+
+      ' '+now.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})+' (WIB +8)';
+  }catch(e){
+    document.getElementById('harga-ts').textContent = 'Harga tidak tersedia saat ini — cek langsung di emassrisemantan.com';
+    ['h-916-buy','h-916-sell','h-999-buy','h-999-sell','h-375-buy','h-usd-myr']
+      .forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent='—'; });
+  }
+})();
 </script>
 </body>
 </html>
