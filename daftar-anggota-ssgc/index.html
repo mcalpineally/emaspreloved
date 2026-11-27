@@ -93,19 +93,28 @@ nav{background:var(--dark);padding:.75rem 1.5rem;position:sticky;top:0;z-index:1
 .nav-cta:hover{background:#a87520}
 
 section[id]{scroll-margin-top:64px}
-/* HARGA EMAS */
-.harga-wrap{background:var(--dark2);border-top:1px solid rgba(201,150,58,.25);border-bottom:1px solid rgba(201,150,58,.25);padding:2.5rem 1.5rem}
-.harga-inner{max-width:940px;margin:0 auto}
-.harga-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.5vw,28px);font-weight:700;color:#fff;margin-bottom:.35rem}
-.harga-inner .harga-sub{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:1.5rem}
-.harga-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.75rem}
-.harga-card{background:rgba(255,255,255,.05);border:1px solid rgba(201,150,58,.25);border-radius:var(--r);padding:1rem 1.2rem}
-.harga-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.45);margin-bottom:6px}
-.harga-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold2)}
-.harga-sub-val{font-size:11px;color:rgba(255,255,255,.4);margin-top:3px}
-.harga-updated{font-size:11px;color:rgba(255,255,255,.3);margin-top:1.25rem;text-align:right}
-.harga-note{font-size:11px;color:rgba(255,255,255,.3);margin-top:.35rem}
-.harga-loading{color:rgba(255,255,255,.4);font-size:13px;font-style:italic}
+.price-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem;box-shadow:0 4px 24px rgba(201,150,58,.10)}
+.price-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.price-card-title{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price-live-badge{font-size:10px;color:var(--gold);background:var(--gold-pale);padding:2px 8px;border-radius:20px;font-weight:500}
+.price-tabs{display:flex;gap:6px;margin-bottom:1rem}
+.price-tab{font-size:12px;padding:4px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;cursor:pointer;font-family:'Inter',sans-serif;color:var(--muted);transition:all .15s}
+.price-tab.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.price-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.price-box{background:var(--gold-pale);border-radius:8px;padding:10px 10px 8px}
+.price-box-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.price-box-val{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--dark);line-height:1}
+.price-box-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.chart-wrap{margin-top:1rem;height:80px;position:relative}
+.price-update{font-size:10px;color:var(--muted);margin-top:8px;text-align:right}
+.gp-wrap{background:var(--gold-pale);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3rem 1.5rem}
+.gp-inner{max-width:940px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:2.5rem;align-items:center}
+.gp-inner>*{min-width:0}
+.gp-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,32px);font-weight:700;color:var(--dark);margin-bottom:.6rem;line-height:1.2}
+.gp-text p{font-size:14px;color:var(--muted);margin-bottom:.75rem}
+.gp-text .gp-note{font-size:12px;opacity:.85}
+.gp-wrap .price-box{background:#fff;border:1px solid var(--border)}
+@media(max-width:700px){.gp-inner{grid-template-columns:1fr;gap:1.25rem}.price-box-val{font-size:18px}}
 
 /* CABANG */
 .cabang-wrap{padding:3rem 1.5rem}
@@ -224,6 +233,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
   .nav-links{display:none}
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -268,45 +278,37 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding
 
 <div class="divider"></div>
 
-<!-- HARGA EMAS -->
-<section class="harga-wrap" id="harga-emas">
-  <div class="harga-inner">
-    <h2>Harga Emas Hari Ini — Malaysia</h2>
-    <div class="harga-sub">Referensi harga emas 916 &amp; 999 di Malaysia · Diperbarui otomatis</div>
-    <div class="harga-grid" id="harga-grid">
-      <div class="harga-card">
-        <div class="harga-label">Emas 916 (22K) — Beli</div>
-        <div class="harga-val" id="h-916-buy">—</div>
-        <div class="harga-sub-val">per gram</div>
-      </div>
-      <div class="harga-card">
-        <div class="harga-label">Emas 916 (22K) — Jual/Buyback</div>
-        <div class="harga-val" id="h-916-sell">—</div>
-        <div class="harga-sub-val">per gram</div>
-      </div>
-      <div class="harga-card">
-        <div class="harga-label">Emas 999.9 (24K) — Beli</div>
-        <div class="harga-val" id="h-999-buy">—</div>
-        <div class="harga-sub-val">per gram</div>
-      </div>
-      <div class="harga-card">
-        <div class="harga-label">Emas 999.9 (24K) — Jual/Buyback</div>
-        <div class="harga-val" id="h-999-sell">—</div>
-        <div class="harga-sub-val">per gram</div>
-      </div>
-      <div class="harga-card">
-        <div class="harga-label">Emas 375 (9K) — Beli</div>
-        <div class="harga-val" id="h-375-buy">—</div>
-        <div class="harga-sub-val">per gram</div>
-      </div>
-      <div class="harga-card">
-        <div class="harga-label">Kurs USD/MYR (ref)</div>
-        <div class="harga-val" id="h-usd-myr">—</div>
-        <div class="harga-sub-val">1 USD = ? MYR</div>
-      </div>
+<!-- GOLD PRICE -->
+<section class="gp-wrap" id="harga-emas">
+  <div class="gp-inner">
+    <div class="gp-text">
+      <div class="eyebrow">Harga Langsung</div>
+      <h2>Harga Emas Hari Ini</h2>
+      <p>Harga emas preloved 916 &amp; 999.9 per gram mengikut indeks FGJAM — sama seperti di cabang KESS. Beli tanpa ongkos pembuatan, atau jual kembali pada harga buyback.</p>
+      <p class="gp-note">Harga dapat berubah setiap hari. Konfirmasi harga akhir di platform atau cabang sebelum bertransaksi.</p>
     </div>
-    <div class="harga-updated" id="harga-ts">Memuat…</div>
-    <div class="harga-note">Harga referensi berdasarkan data pasar. Harga aktual di KESS mungkin berbeda — konfirmasi di cabang atau emassrisemantan.com.</div>
+    <div class="price-card">
+      <div class="price-card-header">
+        <span class="price-card-title">Harga Emas Hari Ini</span>
+        <span class="price-live-badge">● Langsung</span>
+      </div>
+      <div class="price-tabs">
+        <button class="price-tab active" data-tab="916">916 (22K)</button>
+        <button class="price-tab" data-tab="999">999.9 (24K)</button>
+      </div>
+      <div class="price-grid" id="priceGrid916">
+        <div class="price-box"><div class="price-box-label">Beli</div><div class="price-box-val">RM 564</div><div class="price-box-sub">per gram</div></div>
+        <div class="price-box"><div class="price-box-label">Preloved</div><div class="price-box-val">RM 544</div><div class="price-box-sub">tanpa ongkos</div></div>
+        <div class="price-box"><div class="price-box-label">Buyback</div><div class="price-box-val">RM 509</div><div class="price-box-sub">jual kembali</div></div>
+      </div>
+      <div class="price-grid" id="priceGrid999" style="display:none">
+        <div class="price-box"><div class="price-box-label">Beli</div><div class="price-box-val">RM 660</div><div class="price-box-sub">per gram</div></div>
+        <div class="price-box"><div class="price-box-label">Preloved</div><div class="price-box-val">RM 658</div><div class="price-box-sub">tanpa ongkos</div></div>
+        <div class="price-box"><div class="price-box-label">Buyback</div><div class="price-box-val">RM 553</div><div class="price-box-sub">jual kembali</div></div>
+      </div>
+      <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
+      <div class="price-update">Diperbarui: 8 Jun 2026 · Sumber: FGJAM</div>
+    </div>
   </div>
 </section>
 
@@ -653,48 +655,43 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   if(!item.classList.contains('open'))item.querySelector('.faq-chevron').textContent='+';
 });
 
-// Live gold price — fetches XAU/USD spot and converts to MYR using live FX
-(async()=>{
-  try{
-    // Fetch XAU/USD price from public metals API (no key required)
-    const [metalRes, fxRes] = await Promise.all([
-      fetch('https://api.metals.live/v1/spot/gold'),
-      fetch('https://open.er-api.com/v6/latest/USD')
-    ]);
-    if(!metalRes.ok || !fxRes.ok) throw new Error('API unavailable');
-    const metalData = await metalRes.json();
-    const fxData = await fxRes.json();
-
-    // XAU/USD is per troy oz; 1 troy oz = 31.1035g
-    const xauUsd = metalData[0]?.price || metalData?.price;
-    if(!xauUsd) throw new Error('No price data');
-    const myr = fxData.rates?.MYR || 4.65; // fallback rate
-    const perGram999 = xauUsd / 31.1035 * myr;
-
-    // Purity multipliers: 999.9=1, 916=0.916, 375=0.375
-    const buy999  = perGram999 * 1.012;   // typical buy spread ~1.2%
-    const sell999 = perGram999 * 0.988;
-    const buy916  = perGram999 * 0.916 * 1.015;
-    const sell916 = perGram999 * 0.916 * 0.985;
-    const buy375  = perGram999 * 0.375 * 1.02;
-
-    const fmt = v=>'RM '+v.toFixed(2);
-    document.getElementById('h-916-buy').textContent  = fmt(buy916);
-    document.getElementById('h-916-sell').textContent = fmt(sell916);
-    document.getElementById('h-999-buy').textContent  = fmt(buy999);
-    document.getElementById('h-999-sell').textContent = fmt(sell999);
-    document.getElementById('h-375-buy').textContent  = fmt(buy375);
-    document.getElementById('h-usd-myr').textContent  = myr.toFixed(4);
-
-    const now = new Date();
-    document.getElementById('harga-ts').textContent =
-      'Diperbarui: '+now.toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'})+
-      ' '+now.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})+' (WIB +8)';
-  }catch(e){
-    document.getElementById('harga-ts').textContent = 'Harga tidak tersedia saat ini — cek langsung di emassrisemantan.com';
-    ['h-916-buy','h-916-sell','h-999-buy','h-999-sell','h-375-buy','h-usd-myr']
-      .forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent='—'; });
+// ── Live gold price (same source as homepage) ──
+(function(){
+const history916 = [575,580,578,578,570,570,570,570,570,570,578,575,573,563,563,563,564,564];
+const history999 = [673,676,667,675,670,670,670,673,671,671,674,671,665,666,668,670,660,660];
+const labels = ['18 May','19 May','20 May','21 May','22 May','23 May','24 May','25 May','26 May','28 May','30 May','1 Jun','2 Jun','3 Jun','4 Jun','5 Jun','6 Jun','8 Jun'];
+  var chart=null;
+  if(window.Chart){
+    chart=new Chart(document.getElementById('priceChart').getContext('2d'),{
+      type:'line',
+      data:{labels:labels,datasets:[{data:history916,borderColor:'#C9963A',borderWidth:1.5,pointRadius:0,tension:0.4,fill:true,backgroundColor:'rgba(201,150,58,0.08)'}]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return 'RM '+c.parsed.y+'/g';}}}},
+        scales:{x:{display:false},y:{display:true,grid:{color:'rgba(0,0,0,0.05)'},ticks:{font:{size:9},color:'#7A6545',callback:function(v){return 'RM'+v;}}}}}
+    });
   }
+  document.querySelectorAll('.price-tab').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var type=btn.getAttribute('data-tab');
+      document.querySelectorAll('.price-tab').forEach(function(x){x.classList.remove('active');});
+      btn.classList.add('active');
+      document.getElementById('priceGrid916').style.display=type==='916'?'grid':'none';
+      document.getElementById('priceGrid999').style.display=type==='999'?'grid':'none';
+      if(chart){chart.data.datasets[0].data=type==='916'?history916:history999;chart.update();}
+    });
+  });
+  function set(g,i,v){document.querySelector('#priceGrid'+g+' .price-box:nth-child('+i+') .price-box-val').textContent='RM '+v;}
+  fetch('/api/gold-price').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+    var a=d['916'],b=d['999'];
+    set('916',1,a.buy);set('916',2,a.preloved);set('916',3,a.buyback);
+    set('999',1,b.buy);set('999',2,b.preloved);set('999',3,b.buyback);
+    var u=new Date(d.fetched_at);
+    document.querySelector('.price-update').textContent='Diperbarui: '+u.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'})+' · '+u.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})+' · Sumber: FGJAM';
+    history916.push(a.preloved);history916.shift();history999.push(b.preloved);history999.shift();
+    labels.push('Hari Ini');labels.shift();
+    if(chart){chart.data.labels=labels;chart.update();}
+    var bd=document.querySelector('.price-live-badge');bd.textContent='● Langsung';bd.style.color='#2d8a4e';
+  }).catch(function(){document.querySelector('.price-live-badge').textContent='● Kemarin';});
 })();
 </script>
 </body>
